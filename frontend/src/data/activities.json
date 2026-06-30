@@ -1,0 +1,467 @@
+[
+    {
+        "id":  "prop-5",
+        "type":  "activity",
+        "title":  "Ultimate Scuba \u0026 Reef Dive Tour",
+        "city":  "Goa",
+        "location":  "Grande Island Reef, Goa",
+        "price":  7000,
+        "image":  "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.8,
+        "ratingCount":  310,
+        "amenities":  [
+                          "Safety Gear Included",
+                          "Certified Instructors",
+                          "Boat Cruise",
+                          "Lunch Provided"
+                      ],
+        "description":  "Dive deep into the Arabian Sea with our fully PADI-certified team. Includes a scenic speed boat cruise to Grande Island, professional dive training in shallow pools, and one deep reef dive with underwater HD photos.",
+        "status":  "Approved",
+        "reviews":  [
+                        {
+                            "author":  "Karan P.",
+                            "rating":  5,
+                            "date":  "2026-05-18",
+                            "text":  "Best adventure in Goa! Saw three sea turtles and lots of colorful reef fish."
+                        }
+                    ]
+    },
+    {
+        "id":  "prop-6",
+        "type":  "activity",
+        "title":  "Mount Batur Sunrise Trekking \u0026 Volcano Tour",
+        "city":  "Bali",
+        "location":  "Kintamani Highlands, Bali",
+        "price":  5000,
+        "image":  "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.9,
+        "ratingCount":  425,
+        "amenities":  [
+                          "Flashlights \u0026 Hiking Poles",
+                          "Hotel Pickup",
+                          "Breakfast on Peak",
+                          "Local Guide"
+                      ],
+        "description":  "Scale an active volcano in the pitch-dark and witness an unforgettable sunrise above the clouds. Warm up with a fresh breakfast cooked in volcano steam vents. Includes hotel pickup.",
+        "status":  "Approved",
+        "reviews":  [
+                        {
+                            "author":  "David E.",
+                            "rating":  5,
+                            "date":  "2026-05-24",
+                            "text":  "Tough early hike but the views from the crater rim at dawn are absolutely spiritual!"
+                        }
+                    ]
+    },
+    {
+        "id":  "prop-a-1",
+        "type":  "activity",
+        "title":  "Scuba Diving Goa",
+        "city":  "Goa",
+        "location":  "Grand Island, Goa",
+        "price":  3500,
+        "image":  "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.7,
+        "ratingCount":  250,
+        "amenities":  [
+                          "Equipment Included",
+                          "Certified Instructor",
+                          "Boat Ride"
+                      ],
+        "description":  "Explore the vibrant underwater marine life of the Arabian Sea with our certified divers.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-2",
+        "type":  "activity",
+        "title":  "Parasailing Goa",
+        "city":  "Goa",
+        "location":  "Baga Beach, Goa",
+        "price":  1500,
+        "image":  "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.5,
+        "ratingCount":  400,
+        "amenities":  [
+                          "Safety Gear",
+                          "Speedboat",
+                          "Photography"
+                      ],
+        "description":  "Get a bird\u0027s eye view of the beautiful Goan coastline.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-3",
+        "type":  "activity",
+        "title":  "Desert Safari Jaipur",
+        "city":  "Jaipur",
+        "location":  "Outskirts of Jaipur",
+        "price":  4000,
+        "image":  "https://images.unsplash.com/photo-1546942127-6f8e7456d69f?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.8,
+        "ratingCount":  180,
+        "amenities":  [
+                          "Jeep Safari",
+                          "Camel Ride",
+                          "Dinner"
+                      ],
+        "description":  "Experience the thrill of dune bashing followed by a traditional Rajasthani dinner under the stars.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-4",
+        "type":  "activity",
+        "title":  "River Rafting Rishikesh",
+        "city":  "Rishikesh",
+        "location":  "Shivpuri, Rishikesh",
+        "price":  2000,
+        "image":  "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.9,
+        "ratingCount":  500,
+        "amenities":  [
+                          "Safety Gear",
+                          "Expert Guide",
+                          "Transport"
+                      ],
+        "description":  "Battle the thrilling rapids of the holy Ganges river.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-5",
+        "type":  "activity",
+        "title":  "Trekking Manali",
+        "city":  "Manali",
+        "location":  "Bhrigu Lake Trek",
+        "price":  5000,
+        "image":  "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.7,
+        "ratingCount":  120,
+        "amenities":  [
+                          "Tents",
+                          "Meals",
+                          "Guide"
+                      ],
+        "description":  "A mesmerizing 3-day trek through alpine meadows to the high-altitude Bhrigu Lake.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-6",
+        "type":  "activity",
+        "title":  "Houseboat Cruise Kerala",
+        "city":  "Kerala",
+        "location":  "Alleppey Backwaters",
+        "price":  8000,
+        "image":  "https://images.unsplash.com/photo-1593693397690-362cb9666cb2?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.9,
+        "ratingCount":  350,
+        "amenities":  [
+                          "Private Boat",
+                          "Meals Included",
+                          "Overnight Stay"
+                      ],
+        "description":  "Cruise slowly through the tranquil palm-fringed backwaters of Kerala on a traditional houseboat.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-7",
+        "type":  "activity",
+        "title":  "Jaipur Heritage Walk",
+        "city":  "Jaipur",
+        "location":  "Old City, Jaipur",
+        "price":  1000,
+        "image":  "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.6,
+        "ratingCount":  95,
+        "amenities":  [
+                          "Local Guide",
+                          "Snacks"
+                      ],
+        "description":  "Walk through the narrow lanes of the pink city and discover hidden architectural gems.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-8",
+        "type":  "activity",
+        "title":  "Solang Valley Paragliding",
+        "city":  "Manali",
+        "location":  "Solang Valley, Manali",
+        "price":  3000,
+        "image":  "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.8,
+        "ratingCount":  280,
+        "amenities":  [
+                          "Tandem Flight",
+                          "Video Recording"
+                      ],
+        "description":  "Soar high above the snowy peaks and green valleys of Solang.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-9",
+        "type":  "activity",
+        "title":  "Udaipur Boat Ride",
+        "city":  "Udaipur",
+        "location":  "Lake Pichola, Udaipur",
+        "price":  800,
+        "image":  "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.5,
+        "ratingCount":  400,
+        "amenities":  [
+                          "Shared Boat",
+                          "Life Jacket"
+                      ],
+        "description":  "Enjoy a scenic boat ride on Lake Pichola with views of the City Palace and Jag Mandir.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-10",
+        "type":  "activity",
+        "title":  "Kerala Ayurvedic Spa",
+        "city":  "Kerala",
+        "location":  "Kochi, Kerala",
+        "price":  4500,
+        "image":  "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.9,
+        "ratingCount":  150,
+        "amenities":  [
+                          "Massage",
+                          "Herbal Tea",
+                          "Consultation"
+                      ],
+        "description":  "Rejuvenate your body and mind with authentic, ancient Ayurvedic therapies.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-11",
+        "type":  "activity",
+        "title":  "Dudhsagar Waterfall Trek",
+        "city":  "Goa",
+        "location":  "Sanguem",
+        "price":  2000,
+        "image":  "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.6,
+        "ratingCount":  300,
+        "amenities":  [
+                          "Transport",
+                          "Guide",
+                          "Life Jacket"
+                      ],
+        "description":  "A thrilling jeep safari and trek to one of India\u0027s tallest waterfalls.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-12",
+        "type":  "activity",
+        "title":  "Mandovi River Cruise",
+        "city":  "Goa",
+        "location":  "Panjim",
+        "price":  1000,
+        "image":  "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.2,
+        "ratingCount":  450,
+        "amenities":  [
+                          "Music",
+                          "Dance",
+                          "Snacks"
+                      ],
+        "description":  "Enjoy an evening cruise on the Mandovi river with Goan music and dance.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-13",
+        "type":  "activity",
+        "title":  "Anjuna Flea Market Tour",
+        "city":  "Goa",
+        "location":  "Anjuna",
+        "price":  500,
+        "image":  "https://images.unsplash.com/photo-1546942127-6f8e7456d69f?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.3,
+        "ratingCount":  200,
+        "amenities":  [
+                          "Guide",
+                          "Transport"
+                      ],
+        "description":  "Explore the vibrant colors, clothes, and trinkets at the famous Anjuna market.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-14",
+        "type":  "activity",
+        "title":  "Spice Plantation Tour",
+        "city":  "Goa",
+        "location":  "Ponda",
+        "price":  1200,
+        "image":  "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.5,
+        "ratingCount":  180,
+        "amenities":  [
+                          "Guided Walk",
+                          "Traditional Lunch"
+                      ],
+        "description":  "Learn about exotic spices and enjoy a traditional Goan Hindu lunch served on a banana leaf.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-15",
+        "type":  "activity",
+        "title":  "Goa Heritage Walk",
+        "city":  "Goa",
+        "location":  "Old Goa",
+        "price":  800,
+        "image":  "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.7,
+        "ratingCount":  150,
+        "amenities":  [
+                          "Local Guide",
+                          "Water"
+                      ],
+        "description":  "Discover the majestic Portuguese churches and cathedrals of Old Goa.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-16",
+        "type":  "activity",
+        "title":  "Kayaking in Sal Backwaters",
+        "city":  "Goa",
+        "location":  "South Goa",
+        "price":  1500,
+        "image":  "https://images.unsplash.com/photo-1593693397690-362cb9666cb2?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.8,
+        "ratingCount":  110,
+        "amenities":  [
+                          "Kayak",
+                          "Life Jacket",
+                          "Guide"
+                      ],
+        "description":  "Paddle through the serene and undiscovered mangrove forests of South Goa.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-17",
+        "type":  "activity",
+        "title":  "Chapora Fort Sunset Hike",
+        "city":  "Goa",
+        "location":  "Vagator",
+        "price":  300,
+        "image":  "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.5,
+        "ratingCount":  350,
+        "amenities":  [
+                          "Guide"
+                      ],
+        "description":  "A short hike to the Dil Chahta Hai fort offering panoramic views of the Vagator beach at sunset.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-18",
+        "type":  "activity",
+        "title":  "Dolphin Watching Tour",
+        "city":  "Goa",
+        "location":  "Sinquerim",
+        "price":  1200,
+        "image":  "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.1,
+        "ratingCount":  280,
+        "amenities":  [
+                          "Boat Ride",
+                          "Life Jacket"
+                      ],
+        "description":  "Head out into the Arabian sea to spot playful Indo-Pacific humpback dolphins.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-19",
+        "type":  "activity",
+        "title":  "Goan Cooking Class",
+        "city":  "Goa",
+        "location":  "Margao",
+        "price":  2500,
+        "image":  "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.9,
+        "ratingCount":  95,
+        "amenities":  [
+                          "Ingredients",
+                          "Lunch",
+                          "Recipes"
+                      ],
+        "description":  "Learn to cook authentic Goan fish curry and vindaloo with a local family.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-a-goa-20",
+        "type":  "activity",
+        "title":  "Bungee Jumping Goa",
+        "city":  "Goa",
+        "location":  "Mayem Lake",
+        "price":  4000,
+        "image":  "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.7,
+        "ratingCount":  220,
+        "amenities":  [
+                          "Safety Gear",
+                          "Jump Certificate",
+                          "Video"
+                      ],
+        "description":  "Take the leap of faith over the picturesque Mayem Lake with certified jump masters.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    }
+]

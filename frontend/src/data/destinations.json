@@ -1,0 +1,265 @@
+[
+    {
+        "id":  "dest-1",
+        "name":  "Goa",
+        "slug":  "goa",
+        "country":  "India",
+        "city":  "Goa",
+        "description":  "Goa is a state in western India with coastlines stretching along the Arabian Sea. Its long history as a Portuguese colony prior to 1961 is evident in its preserved 17th-century churches and the area\u0027s tropical spice plantations. Goa is also known for its beaches, ranging from popular stretches at Baga and Palolem to those in laid-back fishing villages such as Agonda.",
+        "thumbnail":  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+                        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+                        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.8,
+        "ratingCount":  520,
+        "budget":  "Moderate",
+        "season":  "Dry Months (Oct - May)",
+        "visa":  "eVisa / Visa on Arrival",
+        "highlights":  [
+                           "Golden Sandy Beaches",
+                           "Heritage Portuguese Churches",
+                           "Water Sports \u0026 Scuba",
+                           "Vibrant Beach Shacks"
+                       ],
+        "reviews":  [
+                        {
+                            "author":  "Karan P.",
+                            "rating":  5,
+                            "date":  "2026-05-24",
+                            "text":  "Goa is an absolute paradise. The beaches are beautiful and the local seafood curries are out of this world."
+                        },
+                        {
+                            "author":  "Sara H.",
+                            "rating":  4,
+                            "date":  "2026-05-18",
+                            "text":  "Lovely beaches and great nightlife. Can get crowded during holidays, but off-season is peaceful."
+                        }
+                    ]
+    },
+    {
+        "id":  "dest-2",
+        "name":  "Bali",
+        "slug":  "bali",
+        "country":  "Indonesia",
+        "city":  "Bali",
+        "description":  "Bali is a province of Indonesia and the westernmost of the Lesser Sunda Islands. East of Java and west of Lombok, the province includes the island of Bali and a few smaller neighbouring islands, notably Nusa Penida, Nusa Lembongan, and Nusa Ceningan. Bali is renowned for its highly developed arts, including traditional and modern dance, sculpture, painting, leather, metalworking, and music.",
+        "thumbnail":  "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+                        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+                        "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.9,
+        "ratingCount":  642,
+        "budget":  "Moderate",
+        "season":  "Dry Season (April - Oct)",
+        "visa":  "Visa on Arrival (VOA)",
+        "highlights":  [
+                           "Sacred Forest Temples",
+                           "Volcano Sunrise Treks",
+                           "Turquoise Snorkeling Bays",
+                           "Yoga \u0026 Wellness Spas"
+                       ],
+        "reviews":  [
+                        {
+                            "author":  "Elena R.",
+                            "rating":  5,
+                            "date":  "2026-05-22",
+                            "text":  "The spiritual energy and lush jungles in Ubud are unparalleled. Truly a magical island."
+                        }
+                    ]
+    },
+    {
+        "id":  "dest-3",
+        "name":  "Tokyo",
+        "slug":  "tokyo",
+        "country":  "Japan",
+        "city":  "Tokyo",
+        "description":  "Tokyo, officially the Tokyo Metropolitan Government, is the capital and largest city of Japan. Historically known as Edo, the city has been the de facto seat of government since 1603. Today, Tokyo is the core of the world\u0027s most populous metropolitan area, with a population of over 37 million people. Tokyo is famed for its neon lights, futuristic architecture, and historic shrines.",
+        "thumbnail":  "https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+                        "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+                        "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.8,
+        "ratingCount":  310,
+        "budget":  "Luxury",
+        "season":  "Spring \u0026 Autumn (March-May, Sep-Nov)",
+        "visa":  "eVisa Required / Exemption",
+        "highlights":  [
+                           "Futuristic Skylines",
+                           "Shinjuku Neon Nightlife",
+                           "Historical Shinto Shrines",
+                           "Culinary Izakaya Crawls"
+                       ],
+        "reviews":  [
+                        {
+                            "author":  "Kenji Y.",
+                            "rating":  5,
+                            "date":  "2026-05-12",
+                            "text":  "Amazing mix of history and future. The food scene is outstanding, clean, and extremely safe."
+                        }
+                    ]
+    },
+    {
+        "id":  "dest-4",
+        "name":  "Paris",
+        "slug":  "paris",
+        "country":  "France",
+        "city":  "Paris",
+        "description":  "Paris is the capital and most populous city of France. Located on the Seine River in the north of the country, it is the center of the Île-de-France region. Paris is one of the world\u0027s major centers of finance, diplomacy, commerce, fashion, gastronomy, and the arts. The city has a rich history, with world-famous monuments like the Eiffel Tower, the Louvre, and Notre-Dame Cathedral.",
+        "thumbnail":  "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+                        "https://images.unsplash.com/photo-1499856871958-5b9647a6406a?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+                        "https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.7,
+        "ratingCount":  420,
+        "budget":  "Luxury",
+        "season":  "Spring \u0026 Summer (April - Sep)",
+        "visa":  "Schengen Visa Required",
+        "highlights":  [
+                           "Eiffel Tower Light Shows",
+                           "Louvre Museum Treasures",
+                           "Marais Boutique Cafes",
+                           "Romantic Seine Jazz Cruises"
+                       ],
+        "reviews":  [
+                        {
+                            "author":  "Marc L.",
+                            "rating":  4,
+                            "date":  "2026-05-09",
+                            "text":  "Beautiful city, full of art and romantic spots. Cafe culture is amazing."
+                        }
+                    ]
+    },
+    {
+        "id":  "dest-5",
+        "name":  "Jaipur",
+        "slug":  "jaipur",
+        "country":  "India",
+        "city":  "Jaipur",
+        "description":  "The Pink City of India, known for its royal heritage, majestic palaces, and vibrant culture.",
+        "thumbnail":  "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.8,
+        "ratingCount":  410,
+        "budget":  "Moderate",
+        "season":  "Winter (Oct - March)",
+        "visa":  "eVisa",
+        "highlights":  [
+                           "Amber Fort",
+                           "Hawa Mahal",
+                           "Local Bazaars"
+                       ],
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "dest-6",
+        "name":  "Manali",
+        "slug":  "manali",
+        "country":  "India",
+        "city":  "Manali",
+        "description":  "A high-altitude Himalayan resort town known for snow, adventure sports, and scenic valleys.",
+        "thumbnail":  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.7,
+        "ratingCount":  350,
+        "budget":  "Budget",
+        "season":  "Summer \u0026 Winter",
+        "visa":  "eVisa",
+        "highlights":  [
+                           "Snow Treks",
+                           "Solang Valley",
+                           "Old Manali Cafes"
+                       ],
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "dest-7",
+        "name":  "Udaipur",
+        "slug":  "udaipur",
+        "country":  "India",
+        "city":  "Udaipur",
+        "description":  "The City of Lakes, arguably the most romantic destination in India with its floating palaces.",
+        "thumbnail":  "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.9,
+        "ratingCount":  500,
+        "budget":  "Luxury",
+        "season":  "Winter (Oct - March)",
+        "visa":  "eVisa",
+        "highlights":  [
+                           "Lake Pichola",
+                           "City Palace",
+                           "Jag Mandir"
+                       ],
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "dest-8",
+        "name":  "Rishikesh",
+        "slug":  "rishikesh",
+        "country":  "India",
+        "city":  "Rishikesh",
+        "description":  "The Yoga Capital of the World, nestled in the Himalayan foothills beside the Ganges River.",
+        "thumbnail":  "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.8,
+        "ratingCount":  600,
+        "budget":  "Budget",
+        "season":  "Sep - Nov, Feb - April",
+        "visa":  "eVisa",
+        "highlights":  [
+                           "River Rafting",
+                           "Yoga Ashrams",
+                           "Ganga Aarti"
+                       ],
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "dest-9",
+        "name":  "Kerala",
+        "slug":  "kerala",
+        "country":  "India",
+        "city":  "Kerala",
+        "description":  "God\u0027s Own Country, famous for its palm-lined beaches and network of tranquil backwaters.",
+        "thumbnail":  "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.9,
+        "ratingCount":  750,
+        "budget":  "Moderate",
+        "season":  "Winter (Sep - March)",
+        "visa":  "eVisa",
+        "highlights":  [
+                           "Houseboat Cruises",
+                           "Ayurveda",
+                           "Tea Gardens"
+                       ],
+        "reviews":  [
+
+                    ]
+    }
+]

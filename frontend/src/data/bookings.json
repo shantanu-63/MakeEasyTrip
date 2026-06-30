@@ -1,0 +1,41 @@
+[
+    {
+        "id":  "MET-1904-8392",
+        "propertyId":  "prop-2",
+        "propertyName":  "The Jungle Canopy Ubud Resort",
+        "type":  "hotel",
+        "city":  "Bali",
+        "customerName":  "Siddharth Patil",
+        "checkin":  "2026-04-12",
+        "checkout":  "2026-04-17",
+        "date":  "2026-04-12",
+        "pricePaid":  118000.00,
+        "status":  "Confirmed"
+    },
+    {
+        "id":  "MET-2022-7719",
+        "propertyId":  "prop-1",
+        "propertyName":  "Ocean Palms Beach Resort",
+        "type":  "hotel",
+        "city":  "Goa",
+        "customerName":  "Priya Sharma",
+        "checkin":  "2026-06-05",
+        "checkout":  "2026-06-08",
+        "date":  "2026-06-05",
+        "pricePaid":  45000.00,
+        "status":  "Confirmed"
+    },
+    {
+        "id":  "MET-3112-9904",
+        "propertyId":  "prop-5",
+        "propertyName":  "Ultimate Scuba \u0026 Reef Dive Tour",
+        "type":  "activity",
+        "city":  "Goa",
+        "customerName":  "Aravind Nair",
+        "checkin":  "2026-06-12",
+        "checkout":  "",
+        "date":  "2026-06-12",
+        "pricePaid":  14000.00,
+        "status":  "Confirmed"
+    }
+]

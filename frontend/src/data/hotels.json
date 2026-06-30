@@ -1,0 +1,545 @@
+[
+    {
+        "id":  "prop-1",
+        "type":  "hotel",
+        "title":  "Ocean Palms Beach Resort",
+        "city":  "Goa",
+        "location":  "Candolim Beach, North Goa",
+        "price":  15000,
+        "image":  "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.8,
+        "ratingCount":  142,
+        "amenities":  [
+                          "Free WiFi",
+                          "Swimming Pool",
+                          "Ocean View",
+                          "Spa"
+                      ],
+        "description":  "Featuring a prime beachfront location on Candolim Beach, Ocean Palms Resort offers panoramic ocean views, private sundecks, high-speed WiFi, and a premium wellness spa. Perfect for families and couples.",
+        "status":  "Approved",
+        "reviews":  [
+                        {
+                            "author":  "Rajesh S.",
+                            "rating":  5,
+                            "date":  "2026-05-15",
+                            "text":  "Stunning sunsets! The hospitality is world-class and pool-side cocktails are wonderful."
+                        },
+                        {
+                            "author":  "Emma W.",
+                            "rating":  4,
+                            "date":  "2026-05-20",
+                            "text":  "Extremely close to the beach. Cozy rooms, but WiFi was slightly slow on the top floor."
+                        }
+                    ]
+    },
+    {
+        "id":  "prop-2",
+        "type":  "hotel",
+        "title":  "The Jungle Canopy Ubud Resort",
+        "city":  "Bali",
+        "location":  "Ubud Rainforest, Bali",
+        "price":  20000,
+        "image":  "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.9,
+        "ratingCount":  96,
+        "amenities":  [
+                          "Free WiFi",
+                          "Swimming Pool",
+                          "Spa",
+                          "Private Villa"
+                      ],
+        "description":  "Immerse yourself in nature. This luxury eco-resort features individual private infinity pools overlooking the rainforest valley, open-air yoga shalas, and organic farm-to-table dining experiences.",
+        "status":  "Approved",
+        "reviews":  [
+                        {
+                            "author":  "Chloe L.",
+                            "rating":  5,
+                            "date":  "2026-05-10",
+                            "text":  "Heaven on earth! The floating breakfast in the private pool was an absolute highlight."
+                        }
+                    ]
+    },
+    {
+        "id":  "prop-3",
+        "type":  "hotel",
+        "title":  "Park Central Shinjuku Tower",
+        "city":  "Tokyo",
+        "location":  "Shinjuku District, Tokyo",
+        "price":  26000,
+        "image":  "https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "gallery":  [
+                        "https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+                        "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format\u0026fit=crop\u0026w=800\u0026q=80"
+                    ],
+        "rating":  4.7,
+        "ratingCount":  218,
+        "amenities":  [
+                          "Free WiFi",
+                          "Metro Connection",
+                          "Gym",
+                          "High Floor View"
+                      ],
+        "description":  "Situated in the beating heart of Shinjuku, this soaring hotel tower offers minimalist premium rooms with expansive windows showcasing Mount Fuji. Step directly into the world\u0027s busiest transit system.",
+        "status":  "Approved",
+        "reviews":  [
+                        {
+                            "author":  "Hiroshi T.",
+                            "rating":  5,
+                            "date":  "2026-04-28",
+                            "text":  "Perfect central location. Exquisite sky lounge views on the 48th floor."
+                        }
+                    ]
+    },
+    {
+        "id":  "prop-4",
+        "type":  "hotel",
+        "title":  "Hotel de L\u0027Opera Bastille",
+        "city":  "Paris",
+        "location":  "Le Marais District, Paris",
+        "price":  28000,
+        "image":  "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.6,
+        "ratingCount":  88,
+        "amenities":  [
+                          "Free WiFi",
+                          "Bathtub",
+                          "Boutique Style",
+                          "Breakfast Included"
+                      ],
+        "description":  "A heritage boutique hotel featuring historical French architecture combined with modern luxurious interiors. Steps away from artisan bakeries, museums, and historic bistros in Le Marais.",
+        "status":  "Approved",
+        "reviews":  [
+                        {
+                            "author":  "Sophia M.",
+                            "rating":  4,
+                            "date":  "2026-05-02",
+                            "text":  "Lovely croissants in the morning and a beautifully decorated room. Very romantic atmosphere."
+                        }
+                    ]
+    },
+    {
+        "id":  "prop-h-1",
+        "type":  "hotel",
+        "title":  "Taj Resort Goa",
+        "city":  "Goa",
+        "location":  "Candolim, Goa",
+        "price":  18000,
+        "image":  "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.9,
+        "ratingCount":  320,
+        "amenities":  [
+                          "Free WiFi",
+                          "Swimming Pool",
+                          "Spa",
+                          "Ocean View"
+                      ],
+        "description":  "Experience luxury living by the sea at this iconic premium resort.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-2",
+        "type":  "hotel",
+        "title":  "Grand Beach Resort Goa",
+        "city":  "Goa",
+        "location":  "Calangute, Goa",
+        "price":  12000,
+        "image":  "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.6,
+        "ratingCount":  150,
+        "amenities":  [
+                          "Free WiFi",
+                          "Swimming Pool",
+                          "Gym"
+                      ],
+        "description":  "A perfect blend of modern comfort and tropical vibes right on Calangute beach.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-3",
+        "type":  "hotel",
+        "title":  "Royal Heritage Jaipur",
+        "city":  "Jaipur",
+        "location":  "Bani Park, Jaipur",
+        "price":  25000,
+        "image":  "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.8,
+        "ratingCount":  200,
+        "amenities":  [
+                          "Free WiFi",
+                          "Heritage Rooms",
+                          "Pool",
+                          "Fine Dining"
+                      ],
+        "description":  "Step into the royal past of Rajasthan in this beautifully restored heritage palace.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-4",
+        "type":  "hotel",
+        "title":  "Himalayan View Manali",
+        "city":  "Manali",
+        "location":  "Old Manali",
+        "price":  8000,
+        "image":  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.5,
+        "ratingCount":  180,
+        "amenities":  [
+                          "Free WiFi",
+                          "Mountain View",
+                          "Heater"
+                      ],
+        "description":  "Wake up to snow-capped mountains and lush pine forests in this cozy mountain lodge.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-5",
+        "type":  "hotel",
+        "title":  "Lake Palace Udaipur",
+        "city":  "Udaipur",
+        "location":  "Lake Pichola, Udaipur",
+        "price":  35000,
+        "image":  "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  5.0,
+        "ratingCount":  450,
+        "amenities":  [
+                          "Free WiFi",
+                          "Lake View",
+                          "Luxury Spa",
+                          "Boat Transfer"
+                      ],
+        "description":  "A magical palace floating on Lake Pichola, offering the ultimate romantic getaway.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-6",
+        "type":  "hotel",
+        "title":  "Jaipur Luxury Inn",
+        "city":  "Jaipur",
+        "location":  "C-Scheme, Jaipur",
+        "price":  14000,
+        "image":  "https://images.unsplash.com/photo-1551882547-ff40eb0d1b73?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.4,
+        "ratingCount":  90,
+        "amenities":  [
+                          "Free WiFi",
+                          "Swimming Pool",
+                          "Gym"
+                      ],
+        "description":  "Modern luxury right in the heart of the Pink City.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-7",
+        "type":  "hotel",
+        "title":  "Snow Peak Hotel",
+        "city":  "Manali",
+        "location":  "Mall Road, Manali",
+        "price":  6000,
+        "image":  "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.3,
+        "ratingCount":  110,
+        "amenities":  [
+                          "Free WiFi",
+                          "Restaurant",
+                          "Parking"
+                      ],
+        "description":  "Conveniently located near the Mall Road with excellent views of the valley.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-8",
+        "type":  "hotel",
+        "title":  "Udaipur Sunset Villa",
+        "city":  "Udaipur",
+        "location":  "Fateh Sagar, Udaipur",
+        "price":  20000,
+        "image":  "https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.7,
+        "ratingCount":  140,
+        "amenities":  [
+                          "Free WiFi",
+                          "Lake View",
+                          "Private Pool"
+                      ],
+        "description":  "A private luxury villa with stunning sunset views over the lake.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-9",
+        "type":  "hotel",
+        "title":  "Rishikesh Yoga Retreat",
+        "city":  "Rishikesh",
+        "location":  "Tapovan, Rishikesh",
+        "price":  5000,
+        "image":  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.8,
+        "ratingCount":  300,
+        "amenities":  [
+                          "Free WiFi",
+                          "Yoga Classes",
+                          "Vegan Food"
+                      ],
+        "description":  "Find your inner peace at our authentic yoga ashram by the Ganges.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-10",
+        "type":  "hotel",
+        "title":  "Kerala Backwaters Resort",
+        "city":  "Kerala",
+        "location":  "Alleppey, Kerala",
+        "price":  16000,
+        "image":  "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.9,
+        "ratingCount":  220,
+        "amenities":  [
+                          "Free WiFi",
+                          "Houseboat Tours",
+                          "Ayurvedic Spa"
+                      ],
+        "description":  "Relax amidst the serene backwaters and lush greenery of God\u0027s Own Country.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-1",
+        "type":  "hotel",
+        "title":  "Bali Jungle Retreat",
+        "city":  "Bali",
+        "location":  "Ubud",
+        "price":  12000,
+        "image":  "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.8,
+        "ratingCount":  150,
+        "amenities":  [
+                          "Free WiFi",
+                          "Pool",
+                          "Spa",
+                          "Yoga"
+                      ],
+        "description":  "Immerse yourself in the tranquil jungle of Ubud.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-2",
+        "type":  "hotel",
+        "title":  "Uluwatu Cliff Resort",
+        "city":  "Bali",
+        "location":  "Uluwatu",
+        "price":  25000,
+        "image":  "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.9,
+        "ratingCount":  220,
+        "amenities":  [
+                          "Ocean View",
+                          "Infinity Pool",
+                          "Free WiFi"
+                      ],
+        "description":  "Luxury resort perched on the dramatic cliffs of Uluwatu.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-3",
+        "type":  "hotel",
+        "title":  "Seminyak Beach Villa",
+        "city":  "Bali",
+        "location":  "Seminyak",
+        "price":  18000,
+        "image":  "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.7,
+        "ratingCount":  180,
+        "amenities":  [
+                          "Private Pool",
+                          "Beach Access",
+                          "Free WiFi"
+                      ],
+        "description":  "A stylish private villa located steps away from Seminyak Beach.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-4",
+        "type":  "hotel",
+        "title":  "Nusa Dua Grand Hotel",
+        "city":  "Bali",
+        "location":  "Nusa Dua",
+        "price":  22000,
+        "image":  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.6,
+        "ratingCount":  300,
+        "amenities":  [
+                          "Free WiFi",
+                          "Multiple Pools",
+                          "Kids Club",
+                          "Spa"
+                      ],
+        "description":  "A sprawling family-friendly resort in the upscale Nusa Dua area.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-5",
+        "type":  "hotel",
+        "title":  "Kuta Surf Hostel",
+        "city":  "Bali",
+        "location":  "Kuta",
+        "price":  3000,
+        "image":  "https://images.unsplash.com/photo-1551882547-ff40eb0d1b73?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.3,
+        "ratingCount":  400,
+        "amenities":  [
+                          "Free WiFi",
+                          "Bar",
+                          "Surf Lessons"
+                      ],
+        "description":  "Vibrant and budget-friendly hostel for surfers and backpackers.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-6",
+        "type":  "hotel",
+        "title":  "Canggu Eco Lodge",
+        "city":  "Bali",
+        "location":  "Canggu",
+        "price":  8000,
+        "image":  "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.5,
+        "ratingCount":  120,
+        "amenities":  [
+                          "Free WiFi",
+                          "Eco-Friendly",
+                          "Vegan Cafe"
+                      ],
+        "description":  "Sustainable lodge surrounded by rice paddies and hipster cafes.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-7",
+        "type":  "hotel",
+        "title":  "Jimbaran Bay Spa Resort",
+        "city":  "Bali",
+        "location":  "Jimbaran",
+        "price":  15000,
+        "image":  "https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.7,
+        "ratingCount":  210,
+        "amenities":  [
+                          "Free WiFi",
+                          "Beachfront",
+                          "Seafood Dining"
+                      ],
+        "description":  "Famous for its seafood dinners on the beach and spectacular sunsets.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-8",
+        "type":  "hotel",
+        "title":  "Sanur Family Suites",
+        "city":  "Bali",
+        "location":  "Sanur",
+        "price":  10000,
+        "image":  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.6,
+        "ratingCount":  140,
+        "amenities":  [
+                          "Free WiFi",
+                          "Kitchenette",
+                          "Pool"
+                      ],
+        "description":  "Spacious suites perfect for families looking for a quiet beach town.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-9",
+        "type":  "hotel",
+        "title":  "Amed Diver\u0027s Haven",
+        "city":  "Bali",
+        "location":  "Amed",
+        "price":  5000,
+        "image":  "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.8,
+        "ratingCount":  90,
+        "amenities":  [
+                          "Free WiFi",
+                          "Dive Center",
+                          "Ocean View"
+                      ],
+        "description":  "A peaceful retreat for diving enthusiasts on Bali\u0027s east coast.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    },
+    {
+        "id":  "prop-h-bali-10",
+        "type":  "hotel",
+        "title":  "Mount Batur View Hotel",
+        "city":  "Bali",
+        "location":  "Kintamani",
+        "price":  7000,
+        "image":  "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
+        "rating":  4.4,
+        "ratingCount":  110,
+        "amenities":  [
+                          "Free WiFi",
+                          "Mountain View",
+                          "Restaurant"
+                      ],
+        "description":  "Wake up to breathtaking views of the active Mount Batur volcano.",
+        "status":  "Approved",
+        "reviews":  [
+
+                    ]
+    }
+]

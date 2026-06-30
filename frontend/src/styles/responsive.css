@@ -1,0 +1,193 @@
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .offers-grid, .review-slider-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .search-fields-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .search-results-layout {
+        grid-template-columns: 1fr;
+    }
+    .filters-sidebar {
+        position: static;
+        width: 100%;
+    }
+    .partner-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+    .offers-grid, .review-slider-grid, .grid-4, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    .search-fields-grid {
+        grid-template-columns: 1fr;
+    }
+    .listing-card {
+        grid-template-columns: 1fr;
+    }
+    .listing-details {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .listing-info {
+        max-width: 100%;
+    }
+    .listing-pricing {
+        border-left: none;
+        padding-left: 0;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .details-content-grid {
+        grid-template-columns: 1fr;
+    }
+    .header-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+    header.app-header {
+        height: auto;
+        padding: 16px 0;
+    }
+}
+
+/* Responsive for About Section */
+@media (max-width: 1024px) {
+    .about-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-vm-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .about-stats-bar {
+        grid-template-columns: 1fr 1fr;
+    }
+    .about-section {
+        padding: 48px 0;
+    }
+}
+
+/* Responsive adjustments for listings & details */
+@media (max-width: 1024px) {
+    .destination-details-layout,
+    .hotel-details-layout {
+        grid-template-columns: 1fr;
+    }
+    .amenities-grid-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .why-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .travel-info-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+    .room-class-card {
+        flex-direction: column;
+    }
+    .room-thumb-box {
+        width: 100%;
+        height: 180px;
+    }
+    .newsletter-form {
+        flex-direction: column;
+        border-radius: var(--radius-sm);
+    }
+    .newsletter-input {
+        border-radius: var(--radius-sm);
+    }
+}
+
+/* ========================================== */
+/* GLOBAL SEARCH & SUGGESTIONS DROPDOWNS      */
+/* ========================================== */
+
+.search-suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 200;
+    max-height: 280px;
+    overflow-y: auto;
+    padding: 8px 0;
+}
+
+.suggestion-item-row {
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.suggestion-item-row:hover {
+    background-color: var(--color-bg-light);
+    color: var(--color-secondary);
+}
+
+.suggestion-item-row i {
+    color: var(--color-text-muted);
+    font-size: 15px;
+}
+
+.recent-search-pill {
+    padding: 8px 12px;
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--transition-fast);
+}
+
+.recent-search-pill:hover {
+    border-color: var(--color-secondary);
+    background-color: var(--color-bg-white);
+    color: var(--color-secondary);
+}
+
+.recent-search-pill i {
+    font-size: 11px;
+    color: var(--color-text-muted);
+}
+

@@ -1,0 +1,471 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum UserRole {
+  CUSTOMER
+  PARTNER
+  ADMIN
+}
+
+enum PartnerType {
+  HOTELIER
+  ACTIVITY_PROVIDER
+  TRAVEL_AGENCY
+}
+
+enum PartnerStatus {
+  PENDING
+  APPROVED
+  SUSPENDED
+  REJECTED
+}
+
+enum PropertyType {
+  HOTEL
+  RESORT
+  VILLA
+  HOSTEL
+  ACTIVITY
+  TOUR
+}
+
+enum PropertyStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  SUSPENDED
+}
+
+enum RoomType {
+  STANDARD
+  DELUXE
+  SUITE
+  VILLA
+  DORMITORY
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+  REFUND_REQUESTED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  CREATED
+  CAPTURED
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  FLAGGED
+  REMOVED
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum NotificationTargetRole {
+  ALL
+  CUSTOMER
+  PARTNER
+  ADMIN
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  passwordHash  String
+  fullName      String
+  phone         String?
+  avatarUrl     String?
+  role          UserRole  @default(CUSTOMER)
+  isActive      Boolean   @default(true)
+  isVerified    Boolean   @default(false)
+  refreshToken  String?
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  bookings         Booking[]
+  reviews          Review[]
+  tickets          SupportTicket[]  @relation("UserTickets")
+  messagesSent     Message[]
+  wishlistItems    WishlistItem[]
+  notifications    UserNotification[]
+  auditLogs        AuditLog[]
+  partnerProfile   Partner?
+
+  @@index([email])
+  @@index([role])
+}
+
+model Partner {
+  id               String        @id @default(uuid())
+  userId           String        @unique
+  user             User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  businessName     String
+  partnerType      PartnerType
+  ownerName        String
+  mobileNumber     String
+  businessAddress  String
+  city             String
+  state            String
+  country          String        @default("India")
+  pincode          String
+  gstNumber        String?
+  panNumber        String?
+  bankName         String?
+  bankAccountNumber String?
+  bankIfsc         String?
+  status           PartnerStatus @default(PENDING)
+  verificationLevel Int          @default(0)
+  commissionRate   Float         @default(10.0)
+  joinedAt         DateTime      @default(now())
+  approvedAt       DateTime?
+  documents        PartnerDocument[]
+  properties       Property[]
+
+  @@index([status])
+  @@index([city])
+}
+
+model PartnerDocument {
+  id          String   @id @default(uuid())
+  partnerId   String
+  partner     Partner  @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  type        String
+  url         String
+  verified    Boolean  @default(false)
+  uploadedAt  DateTime @default(now())
+}
+
+model Destination {
+  id          String     @id @default(uuid())
+  name        String
+  country     String
+  city        String
+  season      String?
+  visaInfo    String?
+  budget      String?
+  description String     @db.Text
+  highlights  String[]
+  thumbnail   String?
+  gallery     String[]
+  rating      Float      @default(4.5)
+  ratingCount Int        @default(0)
+  isActive    Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  properties  Property[]
+  reviews     DestinationReview[]
+
+  @@index([country])
+  @@index([city])
+}
+
+model Property {
+  id            String         @id @default(uuid())
+  title         String
+  type          PropertyType
+  description   String         @db.Text
+  city          String
+  state         String?
+  country       String         @default("India")
+  location      String
+  latitude      Float?
+  longitude     Float?
+  price         Float
+  rating        Float          @default(0)
+  ratingCount   Int            @default(0)
+  amenities     String[]
+  image         String?
+  images        String[]
+  status        PropertyStatus @default(PENDING)
+  isFeatured    Boolean        @default(false)
+  checkInTime   String?        @default("14:00")
+  checkOutTime  String?        @default("11:00")
+  difficulty    String?
+  duration      String?
+  maxGuests     Int?
+  minAge        Int?
+  partnerId     String
+  partner       Partner        @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  destinationId String?
+  destination   Destination?   @relation(fields: [destinationId], references: [id], onDelete: SetNull)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  rooms         Room[]
+  bookings      Booking[]
+  reviews       Review[]
+  wishlistItems WishlistItem[]
+
+  @@index([city])
+  @@index([type])
+  @@index([status])
+  @@index([partnerId])
+  @@index([destinationId])
+}
+
+model Room {
+  id            String    @id @default(uuid())
+  propertyId    String
+  property      Property  @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  name          String
+  type          RoomType
+  description   String?   @db.Text
+  price         Float
+  maxOccupancy  Int
+  bedCount      Int       @default(1)
+  bathCount     Int       @default(1)
+  amenities     String[]
+  images        String[]
+  isAvailable   Boolean   @default(true)
+  totalCount    Int       @default(1)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  bookings      Booking[]
+
+  @@index([propertyId])
+  @@index([isAvailable])
+}
+
+model Booking {
+  id              String        @id @default(uuid())
+  bookingRef      String        @unique @default(cuid())
+  userId          String
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  propertyId      String
+  property        Property      @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  roomId          String?
+  room            Room?         @relation(fields: [roomId], references: [id], onDelete: SetNull)
+  checkIn         DateTime
+  checkOut        DateTime
+  nights          Int
+  guests          Int
+  guestName       String
+  guestEmail      String
+  guestPhone      String?
+  baseAmount      Float
+  taxAmount       Float         @default(0)
+  discountAmount  Float         @default(0)
+  totalAmount     Float
+  status          BookingStatus @default(PENDING)
+  specialRequests String?       @db.Text
+  cancellationReason String?    @db.Text
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  payments        Payment[]
+
+  @@index([userId])
+  @@index([propertyId])
+  @@index([status])
+  @@index([checkIn, checkOut])
+}
+
+model Payment {
+  id                  String        @id @default(uuid())
+  bookingId           String
+  booking             Booking       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  razorpayOrderId     String        @unique
+  razorpayPaymentId   String?
+  razorpaySignature   String?
+  amount              Float
+  currency            String        @default("INR")
+  status              PaymentStatus @default(CREATED)
+  method              String?
+  refundId            String?
+  refundAmount        Float?
+  invoiceUrl          String?
+  receiptNumber       String?
+  metadata            Json?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  @@index([bookingId])
+  @@index([razorpayOrderId])
+  @@index([status])
+}
+
+model Review {
+  id          String       @id @default(uuid())
+  userId      String
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  propertyId  String
+  property    Property     @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  rating      Int
+  title       String?
+  text        String       @db.Text
+  images      String[]
+  status      ReviewStatus @default(PENDING)
+  replyText   String?      @db.Text
+  repliedAt   DateTime?
+  isVerified  Boolean      @default(false)
+  helpfulCount Int         @default(0)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@index([propertyId])
+  @@index([userId])
+  @@index([status])
+}
+
+model DestinationReview {
+  id            String      @id @default(uuid())
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  author        String
+  rating        Int
+  text          String      @db.Text
+  date          DateTime    @default(now())
+}
+
+model WishlistItem {
+  id         String   @id @default(uuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  addedAt    DateTime @default(now())
+
+  @@unique([userId, propertyId])
+  @@index([userId])
+}
+
+model SupportTicket {
+  id          String          @id @default(uuid())
+  ticketRef   String          @unique @default(cuid())
+  userId      String
+  user        User            @relation("UserTickets", fields: [userId], references: [id], onDelete: Cascade)
+  subject     String
+  category    String
+  priority    TicketPriority  @default(MEDIUM)
+  status      TicketStatus    @default(OPEN)
+  assignedTo  String?
+  resolvedAt  DateTime?
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  messages    Message[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([priority])
+}
+
+model Message {
+  id          String        @id @default(uuid())
+  ticketId    String
+  ticket      SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  senderId    String
+  sender      User          @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  senderRole  UserRole
+  text        String        @db.Text
+  attachments String[]
+  isRead      Boolean       @default(false)
+  createdAt   DateTime      @default(now())
+
+  @@index([ticketId])
+}
+
+model CmsBanner {
+  id                  String   @id @default(uuid())
+  title               String
+  subtitle            String
+  imageUrl            String
+  ctaText             String?
+  ctaLink             String?
+  displayOrder        Int
+  status              String   @default("Draft")
+  type                String
+  scheduledStartDate  String?
+  scheduledEndDate    String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([status])
+}
+
+model SystemNotification {
+  id           String                    @id @default(uuid())
+  title        String
+  message      String                    @db.Text
+  targetRole   NotificationTargetRole    @default(ALL)
+  type         String
+  imageUrl     String?
+  actionUrl    String?
+  sentAt       DateTime                  @default(now())
+
+  userNotifications UserNotification[]
+
+  @@index([targetRole])
+}
+
+model UserNotification {
+  id             String               @id @default(uuid())
+  userId         String
+  user           User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notificationId String
+  notification   SystemNotification   @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+  isRead         Boolean              @default(false)
+  readAt         DateTime?
+  createdAt      DateTime             @default(now())
+
+  @@unique([userId, notificationId])
+  @@index([userId, isRead])
+}
+
+model AuditLog {
+  id          String   @id @default(uuid())
+  timestamp   DateTime @default(now())
+  actorType   UserRole
+  actorId     String
+  actor       User?    @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  actionType  String
+  description String   @db.Text
+  ipAddress   String?
+  userAgent   String?
+  metadata    Json?
+
+  @@index([actorId])
+  @@index([actionType])
+  @@index([timestamp])
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([token])
+  @@index([userId])
+}

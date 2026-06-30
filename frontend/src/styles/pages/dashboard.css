@@ -1,0 +1,82 @@
+﻿/* --- CLIENT: Wishlist & Booking History (Dashboard) --- */
+.dashboard-view-container {
+    padding: 40px 0;
+}
+
+.dashboard-tabs {
+    display: flex;
+    gap: 16px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 28px;
+}
+
+.dashboard-tab-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    border-bottom: 3px solid transparent;
+}
+
+.dashboard-tab-btn.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+/* User profile details grid */
+.profile-overview-card {
+    background-color: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.profile-large-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    color: var(--color-bg-white);
+    font-size: 28px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Booking Row Item */
+.booking-history-item {
+    background-color: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.booking-status-badge {
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.booking-status-badge.confirmed {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--color-success);
+}
+
+.booking-status-badge.cancelled {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--color-danger);
+}
+

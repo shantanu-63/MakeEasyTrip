@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: met-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: makeeasytrip
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: met-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/makeeasytrip?schema=public
+      - JWT_SECRET=makeeasytrip-super-secret-key-2026
+      - RAZORPAY_KEY_ID=rzp_test_mockkey
+      - RAZORPAY_KEY_SECRET=mocksecret
+      - SMTP_HOST=smtp.mailtrap.io
+      - SMTP_PORT=2525
+      - SMTP_USER=mockuser
+      - SMTP_PASS=mockpass
+      - SMTP_FROM=noreply@makeeasytrip.com
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: met-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NEXT_PUBLIC_API_URL=http://localhost:5000/api
+      - NEXT_PUBLIC_SUPABASE_URL=https://mock.supabase.co
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=mock-anon-key
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

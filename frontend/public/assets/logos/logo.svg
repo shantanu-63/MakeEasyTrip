@@ -1,0 +1,34 @@
+<svg width="280" height="60" viewBox="0 0 350 80" xmlns="http://www.w3.org/2000/svg">
+    <!-- Suitcase Icon -->
+    <g transform="translate(10, 5)">
+        <!-- Define the clip path for the suitcase body rounded corners -->
+        <clipPath id="header-suitcase-clip">
+            <rect x="10" y="18" width="40" height="42" rx="8" />
+        </clipPath>
+        <!-- Handle Base Attachments -->
+        <rect x="20" y="15" width="4" height="3" rx="1" fill="#0A225C" />
+        <rect x="36" y="15" width="4" height="3" rx="1" fill="#0A225C" />
+        <!-- Handle (hollow retractable loop) -->
+        <path d="M 20,13 L 20,7 C 20,4 23,2 26,2 L 34,2 C 37,2 40,4 40,7 L 40,13 L 36,13 L 36,8 C 36,6 34,5 33,5 L 27,5 C 26,5 24,6 24,8 L 24,13 Z" fill="#0A225C" />
+        <!-- Tiny Suitcase Wheels -->
+        <rect x="16" y="59" width="6" height="4" rx="2" fill="#0A225C" />
+        <rect x="38" y="59" width="6" height="4" rx="2" fill="#0A225C" />
+        <!-- Suitcase Body inside Clip Path -->
+        <g clip-path="url(#header-suitcase-clip)">
+            <!-- Orange Background -->
+            <rect x="10" y="18" width="40" height="42" fill="#FF5E14" />
+            <!-- Navy Mountain split with bottom-left corner cut -->
+            <polygon points="10,52 18,60 26,26 34,40 42,28 50,18 50,60 10,60" fill="#0A225C" />
+        </g>
+        <!-- White Airplane Icon (Tilted 45 degrees, centered in the orange area/bottom-left) -->
+        <path d="M 40,0 L 25,3 L 15,3 L -10,30 L -18,30 L -12,3 L -28,3 L -33,10 L -37,10 L -34,0 L -37,-10 L -33,-10 L -28,-3 L -12,-3 L -18,-30 L -10,-30 L 15,-3 L 25,-3 Z" fill="#FFFFFF" transform="translate(23, 44) rotate(-45) scale(0.32)" />
+    </g>
+    <!-- Brand Typography text -->
+    <g transform="translate(70, 45)">
+        <text font-family="Outfit" font-size="34" font-weight="800" fill="#0A225C">make</text>
+        <text font-family="Outfit" font-size="34" font-weight="800" fill="#FF5E14" x="84">easy</text>
+        <text font-family="Outfit" font-size="34" font-weight="800" fill="#0A225C" x="156">trip</text>
+        <!-- Tagline -->
+        <text font-family="Inter" font-size="11" font-weight="700" letter-spacing="4.5" fill="#475569" x="3" y="18">PARTNER PORTAL</text>
+    </g>
+</svg>
