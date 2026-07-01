@@ -25,7 +25,9 @@ export default function DestinationDetailsClient({ id }: { id: string }) {
 
   // Find the active destination
   const dest = useMemo(() => {
-    return destinations.find((d) => d.id === id);
+    return destinations.find(
+      (d) => d.id === id || d.slug === id || d.slug?.toLowerCase() === id?.toLowerCase()
+    );
   }, [destinations, id]);
 
   const [currentSlide, setCurrentSlide] = useState(0);
