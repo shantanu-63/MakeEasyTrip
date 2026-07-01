@@ -25,13 +25,31 @@ app.use(globalLimiter);
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
+// Custom Parameter Pollution (HPP) mitigation
+app.use((req: Request, res: Response, next: NextFunction) => {
+  if (req.query) {
+    for (const key in req.query) {
+      if (Array.isArray(req.query[key])) {
+        req.query[key] = req.query[key][req.query[key].length - 1] as any;
+      }
+    }
+  }
+  next();
+});
+
+// Custom XSS Header protection
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.setHeader("X-XSS-Protection", "1; mode=block");
+  next();
+});
+
 if (process.env.NODE_ENV !== "test") {
   app.use(requestLogger);
   app.use(morgan("dev", { stream: { write: (msg) => logger.info(msg.trim()) } }));
 }
 
 app.get("/health", (_req: Request, res: Response) => {
-  res.json({ status: "healthy", timestamp: new Date(), version: "2.0.0", env: process.env.NODE_ENV });
+  res.json({ status: "ok" });
 });
 
 app.use("/api", apiRoutes);
