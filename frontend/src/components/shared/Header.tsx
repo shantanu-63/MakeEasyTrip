@@ -100,11 +100,30 @@ export default function Header() {
             </svg>
           </Link>
 
-          {/* Desktop/Mobile Navigation */}
+          {/* Desktop Navigation (Hidden on Mobile) */}
+          <nav
+            className="hidden lg:block"
+            aria-label="Desktop navigation"
+          >
+            <ul className="nav-links" style={{ display: "flex", gap: "24px", alignItems: "center" }}>
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={link.exact === false ? "nav-link" : getNavLinkClass(link.href)}
+                  >
+                    <i className={`fa-solid ${link.icon}`} aria-hidden="true" /> {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Mobile Navigation Drawer (Hidden on Desktop) */}
           <nav
             id="traveler-nav"
-            className={`lg:block ${mobileNavOpen ? "mobile-open block" : "hidden"}`}
-            aria-label="Main navigation"
+            className={`lg:hidden ${mobileNavOpen ? "mobile-open block" : "hidden"}`}
+            aria-label="Mobile navigation"
           >
             <ul className="nav-links">
               {navLinks.map((link) => (
@@ -118,9 +137,9 @@ export default function Header() {
                   </Link>
                 </li>
               ))}
-              {/* Mobile-only auth button */}
+              {/* Mobile-only Sign In button */}
               {!activeUser && (
-                <li className="lg:hidden" style={{ marginTop: "16px", borderTop: "1px solid var(--color-border)", paddingTop: "16px" }}>
+                <li style={{ marginTop: "16px", borderTop: "1px solid var(--color-border)", paddingTop: "16px" }}>
                   <Link
                     href="/customer/auth"
                     className="btn-primary"
@@ -134,7 +153,7 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Desktop Auth Actions + Hamburger */}
+          {/* Header Actions (Auth Badge / Sign In button) */}
           <div className="header-actions" id="header-auth-actions">
             {activeUser ? (
               <div className="user-menu-container" id="user-header-menu">
@@ -188,7 +207,7 @@ export default function Header() {
               </Link>
             )}
 
-            {/* Hamburger button — hidden on desktop, visible on mobile */}
+            {/* Hamburger Menu Toggle (Hidden on Desktop) */}
             <button
               className={`hamburger-btn lg:hidden${mobileNavOpen ? " open" : ""}`}
               onClick={() => setMobileNavOpen(!mobileNavOpen)}
