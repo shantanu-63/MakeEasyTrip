@@ -3,6 +3,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { useData } from "@/context/DataContext";
 
 
 interface BookingDetails {
@@ -26,6 +27,7 @@ function formatCurrency(amount: number): string {
 function CheckoutContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { activeUser, bookings, syncBookings, addLog } = useData();
 
   const [booking, setBooking] = useState<BookingDetails | null>(null);
   const [step, setStep] = useState<1 | 2 | 3>(1);
@@ -100,18 +102,17 @@ function CheckoutContent() {
         total,
       });
     }
-
-    // Pre-fill user details if logged in
-    const session = localStorage.getItem("met_user_session");
-    if (session) {
-      try {
-        const user = JSON.parse(session);
-        setGuestName(user.fullName || "");
-        setGuestEmail(user.email || "");
-        setGuestPhone(user.phone || "");
-      } catch {}
-    }
   }, [searchParams]);
+
+  useEffect(() => {
+    // Pre-fill user details if logged in from activeUser context
+    if (activeUser) {
+      setGuestName(activeUser.fullName || "");
+      setGuestEmail(activeUser.email || "");
+      setGuestPhone(activeUser.phone || "");
+    }
+  }, [activeUser]);
+
 
   const handleGuestDetailsNext = (e: React.FormEvent) => {
     e.preventDefault();
@@ -166,6 +167,7 @@ function CheckoutContent() {
       guestPhone,
       checkIn: booking?.checkIn,
       checkOut: booking?.checkOut,
+      userId: activeUser?.id || "user-local",
       guests: booking?.guests,
       nights: booking?.nights,
       pricePaid: booking?.total,
@@ -176,19 +178,17 @@ function CheckoutContent() {
       specialRequests,
     };
 
-    // Save to localStorage bookings
-    const existingBookings = JSON.parse(localStorage.getItem("met_platform_bookings") || "[]");
-    existingBookings.push(newBooking);
-    localStorage.setItem("met_platform_bookings", JSON.stringify(existingBookings));
+    // Update DataContext global state
+    const updatedBookings = [newBooking, ...bookings];
+    syncBookings(updatedBookings);
+    addLog(`BOOKING: Booked property ${booking?.propertyName} for ₹${booking?.total}`);
 
-    // Save to user bookings
-    const session = localStorage.getItem("met_user_session");
-    if (session) {
+    // Save to user bookings (compat fallback)
+    if (activeUser) {
       try {
-        const user = JSON.parse(session);
-        const userBookings = JSON.parse(localStorage.getItem(`met_user_bookings_${user.id}`) || "[]");
+        const userBookings = JSON.parse(localStorage.getItem(`met_user_bookings_${activeUser.id}`) || "[]");
         userBookings.push(newBooking);
-        localStorage.setItem(`met_user_bookings_${user.id}`, JSON.stringify(userBookings));
+        localStorage.setItem(`met_user_bookings_${activeUser.id}`, JSON.stringify(userBookings));
       } catch {}
     }
 
@@ -200,6 +200,7 @@ function CheckoutContent() {
     setStep(3);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
 
   if (!booking) {
     return (
