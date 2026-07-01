@@ -10,6 +10,20 @@ export default function HotelDetailsPage({ params }: { params: { id: string } })
   const router = useRouter();
   const { properties, activeUser, syncProperties, bookings, syncBookings, addLog } = useData();
 
+  // Track whether initial data load has completed
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  useEffect(() => {
+    if (properties.length > 0) {
+      setDataLoaded(true);
+    }
+  }, [properties]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDataLoaded(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const hotel = useMemo(() => {
     return properties.find((p) => p.id === id && p.type === "hotel");
   }, [properties, id]);
@@ -34,12 +48,36 @@ export default function HotelDetailsPage({ params }: { params: { id: string } })
     }
   }, [hotel, activeUser]);
 
+  // Show skeleton while data is loading
+  if (!dataLoaded && !hotel) {
+    return (
+      <div className="container" style={{ padding: "40px 24px" }}>
+        <div style={{ marginBottom: "24px" }}>
+          <div className="skeleton" style={{ width: "120px", height: "16px", borderRadius: "6px", marginBottom: "12px" }} />
+          <div className="skeleton" style={{ width: "320px", height: "32px", borderRadius: "8px", marginBottom: "8px" }} />
+          <div className="skeleton" style={{ width: "200px", height: "14px", borderRadius: "6px" }} />
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "16px", marginBottom: "32px", height: "320px" }}>
+          <div className="skeleton" style={{ borderRadius: "12px", height: "100%" }} />
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div className="skeleton" style={{ borderRadius: "12px", flex: 1 }} />
+            <div className="skeleton" style={{ borderRadius: "12px", flex: 1 }} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!hotel) {
     return (
-      <div className="container p-8 text-center text-sm text-text-muted">
-        Hotel not found.{" "}
-        <Link href="/customer/hotels" className="text-secondary font-bold">
-          Go Back
+      <div style={{ minHeight: "60vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 24px", textAlign: "center" }}>
+        <div style={{ fontSize: "64px", marginBottom: "16px" }}>🏨</div>
+        <h1 style={{ fontSize: "28px", fontWeight: 800, color: "var(--color-primary)", marginBottom: "12px" }}>Hotel Not Found</h1>
+        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", maxWidth: "400px", marginBottom: "28px", lineHeight: 1.6 }}>
+          We couldn&apos;t find the hotel you&apos;re looking for. It may have been removed or the link is incorrect.
+        </p>
+        <Link href="/customer/hotels" style={{ backgroundColor: "var(--color-secondary)", color: "#fff", padding: "10px 28px", borderRadius: "999px", fontWeight: 700, fontSize: "14px" }}>
+          Browse Hotels
         </Link>
       </div>
     );

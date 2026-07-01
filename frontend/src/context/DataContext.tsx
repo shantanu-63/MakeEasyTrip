@@ -91,17 +91,10 @@ const DEFAULT_BANNERS = [
   },
 ];
 
-const DEFAULT_USER = {
-  id: "user-1",
-  fullName: "Siddharth Patil",
-  email: "siddharth.patil@gmail.com",
-  phone: "+91 98765 43210",
-  role: "traveler",
-  wishlist: ["prop-1", "prop-5"],
-  bookings: [],
-};
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+
+
 
 // ─── Context ──────────────────────────────────────────────────────────────────
 const DataContext = createContext<DataContextType | undefined>(undefined);
@@ -241,8 +234,17 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
 
     // Seed default user list
     if (!localStorage.getItem("met_users")) {
-      safeSet("met_users", [DEFAULT_USER]);
+      safeSet("met_users", [{
+        id: "user-1",
+        fullName: "Siddharth Patil",
+        email: "siddharth.patil@gmail.com",
+        phone: "+91 98765 43210",
+        role: "traveler",
+        wishlist: ["prop-1", "prop-5"],
+        bookings: [],
+      }]);
     }
+
 
     // Supabase auth — dynamically imported to avoid bundle poisoning
     let unsubscribe: (() => void) | null = null;

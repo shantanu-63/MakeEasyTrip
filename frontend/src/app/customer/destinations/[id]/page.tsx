@@ -10,6 +10,20 @@ export default function DestinationDetailsPage({ params }: { params: { id: strin
   const router = useRouter();
   const { destinations, properties, activeUser, syncDestinations, addLog } = useData();
 
+  // Track whether initial data load has completed
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  useEffect(() => {
+    if (destinations.length > 0) {
+      setDataLoaded(true);
+    }
+  }, [destinations]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDataLoaded(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Find the active destination
   const dest = useMemo(() => {
     return destinations.find((d) => d.id === id);
@@ -32,10 +46,36 @@ export default function DestinationDetailsPage({ params }: { params: { id: strin
     }
   }, [dest, activeUser]);
 
+  // Show skeleton while loading
+  if (!dataLoaded && !dest) {
+    return (
+      <div className="container" style={{ padding: "40px 24px" }}>
+        <div style={{ marginBottom: "32px" }}>
+          <div className="skeleton" style={{ width: "240px", height: "36px", borderRadius: "8px", marginBottom: "12px" }} />
+          <div className="skeleton" style={{ width: "320px", height: "16px", borderRadius: "6px" }} />
+        </div>
+        <div className="skeleton" style={{ height: "400px", borderRadius: "16px", marginBottom: "32px" }} />
+        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "32px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            {[1, 2].map((i) => <div key={i} className="skeleton" style={{ height: "120px", borderRadius: "12px" }} />)}
+          </div>
+          <div className="skeleton" style={{ height: "280px", borderRadius: "12px" }} />
+        </div>
+      </div>
+    );
+  }
+
   if (!dest) {
     return (
-      <div className="container p-8 text-center text-sm text-text-muted">
-        Destination not found. <Link href="/customer/destinations" className="text-secondary font-bold">Go Back</Link>
+      <div style={{ minHeight: "60vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 24px", textAlign: "center" }}>
+        <div style={{ fontSize: "64px", marginBottom: "16px" }}>🗺️</div>
+        <h1 style={{ fontSize: "28px", fontWeight: 800, color: "var(--color-primary)", marginBottom: "12px" }}>Destination Not Found</h1>
+        <p style={{ fontSize: "14px", color: "var(--color-text-muted)", maxWidth: "400px", marginBottom: "28px", lineHeight: 1.6 }}>
+          We couldn&apos;t find this destination. It may have been removed or the link is incorrect.
+        </p>
+        <Link href="/customer/destinations" style={{ backgroundColor: "var(--color-secondary)", color: "#fff", padding: "10px 28px", borderRadius: "999px", fontWeight: 700, fontSize: "14px" }}>
+          Browse Destinations
+        </Link>
       </div>
     );
   }
