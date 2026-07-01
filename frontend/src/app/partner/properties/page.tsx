@@ -108,7 +108,8 @@ export default function PartnerPropertiesPage() {
   };
 
   const handleCardClick = (type: "hotel" | "activity", id: string) => {
-    router.push(`/customer/${type}s/${id}`);
+    const routeType = type === "activity" ? "activities" : "hotels";
+    router.push(`/customer/${routeType}/${id}`);
   };
 
   return (
