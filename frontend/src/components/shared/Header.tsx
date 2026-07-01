@@ -100,10 +100,10 @@ export default function Header() {
             </svg>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop/Mobile Navigation */}
           <nav
             id="traveler-nav"
-            className={mobileNavOpen ? "mobile-open" : ""}
+            className={`lg:block ${mobileNavOpen ? "mobile-open block" : "hidden"}`}
             aria-label="Main navigation"
           >
             <ul className="nav-links">
@@ -118,9 +118,9 @@ export default function Header() {
                   </Link>
                 </li>
               ))}
-              {/* Mobile-only auth */}
+              {/* Mobile-only auth button */}
               {!activeUser && (
-                <li style={{ marginTop: "16px", borderTop: "1px solid var(--color-border)", paddingTop: "16px" }}>
+                <li className="lg:hidden" style={{ marginTop: "16px", borderTop: "1px solid var(--color-border)", paddingTop: "16px" }}>
                   <Link
                     href="/customer/auth"
                     className="btn-primary"
@@ -151,7 +151,7 @@ export default function Header() {
                   <div className="user-profile-avatar" id="header-avatar-initials">
                     {getUserInitials()}
                   </div>
-                  <span id="header-username-text" style={{ display: "none" }} className="sm:block">
+                  <span id="header-username-text" className="hidden lg:inline-block">
                     {activeUser.fullName}
                   </span>
                   <i className="fa-solid fa-chevron-down" aria-hidden="true" style={{ fontSize: "11px", marginLeft: "4px", color: "var(--color-primary)" }} />
@@ -180,7 +180,7 @@ export default function Header() {
             ) : (
               <Link
                 href="/customer/auth"
-                className="btn-primary"
+                className="btn-primary hidden lg:inline-flex"
                 id="btn-header-login"
                 style={{ padding: "8px 20px", fontSize: "13px" }}
               >
@@ -190,7 +190,7 @@ export default function Header() {
 
             {/* Hamburger button — hidden on desktop, visible on mobile */}
             <button
-              className={`hamburger-btn${mobileNavOpen ? " open" : ""}`}
+              className={`hamburger-btn lg:hidden${mobileNavOpen ? " open" : ""}`}
               onClick={() => setMobileNavOpen(!mobileNavOpen)}
               aria-label={mobileNavOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileNavOpen}
