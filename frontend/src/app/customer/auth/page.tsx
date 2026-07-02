@@ -235,7 +235,7 @@ function TravelerAuthContent() {
                   value={loginEmail}
                   onChange={(e) => setLoginEmail(e.target.value)}
                   placeholder="siddharth.patil@gmail.com"
-                  leftIcon={<Mail size={16} />}
+                  leftIcon={<Mail className="w-5 h-5" />}
                 />
                 <Input
                   label="Password"
@@ -244,7 +244,7 @@ function TravelerAuthContent() {
                   value={loginPassword}
                   onChange={(e) => setLoginPassword(e.target.value)}
                   placeholder="Enter password"
-                  leftIcon={<Lock size={16} />}
+                  leftIcon={<Lock className="w-5 h-5" />}
                 />
                 <div className="form-checkbox-row flex justify-between items-center text-[10px] text-text-main">
                   <label className="flex items-center gap-1.5 cursor-pointer select-none">
@@ -291,7 +291,7 @@ function TravelerAuthContent() {
                   value={signupName}
                   onChange={(e) => setSignupName(e.target.value)}
                   placeholder="Siddharth Patil"
-                  leftIcon={<User size={16} />}
+                  leftIcon={<User className="w-5 h-5" />}
                 />
                 <Input
                   label="Email Address"
@@ -300,7 +300,7 @@ function TravelerAuthContent() {
                   value={signupEmail}
                   onChange={(e) => setSignupEmail(e.target.value)}
                   placeholder="siddharth.patil@gmail.com"
-                  leftIcon={<Mail size={16} />}
+                  leftIcon={<Mail className="w-5 h-5" />}
                 />
                 <Input
                   label="Mobile Number"
@@ -309,7 +309,7 @@ function TravelerAuthContent() {
                   value={signupPhone}
                   onChange={(e) => setSignupPhone(e.target.value)}
                   placeholder="+91 98765 43210"
-                  leftIcon={<Phone size={16} />}
+                  leftIcon={<Phone className="w-5 h-5" />}
                 />
                 <div className="flex flex-col gap-1.5 w-full">
                   <Input
@@ -322,7 +322,7 @@ function TravelerAuthContent() {
                       checkStrength(e.target.value);
                     }}
                     placeholder="Enter password"
-                    leftIcon={<Lock size={16} />}
+                    leftIcon={<Lock className="w-5 h-5" />}
                   />
                   <div className="strength-indicator-box mt-1">
                     <div className="strength-bar bg-slate-100 h-1.5 rounded overflow-hidden">
@@ -343,7 +343,7 @@ function TravelerAuthContent() {
                   value={signupConfirmPassword}
                   onChange={(e) => setSignupConfirmPassword(e.target.value)}
                   placeholder="Re-enter password"
-                  leftIcon={<Lock size={16} />}
+                  leftIcon={<Lock className="w-5 h-5" />}
                 />
                 <div className="form-checkbox-row text-[10px] text-text-main mt-1">
                   <label className="flex items-start gap-2 cursor-pointer select-none">
@@ -399,7 +399,7 @@ function TravelerAuthContent() {
                   value={forgotEmail}
                   onChange={(e) => setForgotEmail(e.target.value)}
                   placeholder="Enter email or mobile"
-                  leftIcon={<Mail size={16} />}
+                  leftIcon={<Mail className="w-5 h-5" />}
                 />
                 <button type="submit" className="btn-primary w-full justify-center py-2.5 text-xs">
                   <i className="fa-solid fa-paper-plane mr-1.5"></i> Send Verification OTP
@@ -495,7 +495,7 @@ function TravelerAuthContent() {
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   placeholder="Enter new password"
-                  leftIcon={<Lock size={16} />}
+                  leftIcon={<Lock className="w-5 h-5" />}
                 />
                 <Input
                   label="Confirm Password"
@@ -504,7 +504,7 @@ function TravelerAuthContent() {
                   value={confirmNewPassword}
                   onChange={(e) => setConfirmNewPassword(e.target.value)}
                   placeholder="Confirm new password"
-                  leftIcon={<Lock size={16} />}
+                  leftIcon={<Lock className="w-5 h-5" />}
                 />
                 <button type="submit" className="btn-primary w-full justify-center py-2.5 text-xs flex items-center gap-1.5">
                   <i className="fa-solid fa-key"></i> Reset Password

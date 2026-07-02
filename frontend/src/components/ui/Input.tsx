@@ -44,29 +44,28 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           </label>
         )}
         <div className="relative w-full">
-          {/* Left Icon */}
+          {/* LEFT ICON */}
           {leftIcon && (
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none z-10 flex items-center justify-center">
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none z-10 flex items-center justify-center">
               {leftIcon}
             </div>
           )}
 
-          {/* Input field */}
+          {/* INPUT */}
           <input
             ref={ref}
             type={inputType}
             disabled={disabled || loading}
-            className={`w-full h-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all
-              ${leftIcon ? "pl-12" : "pl-4"}
+            className={`h-12 w-full rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all pl-12
               ${isPassword || rightIcon ? "pr-12" : "pr-4"}
-              ${error ? "border-red-500 focus:ring-red-500" : ""}
+              ${error ? "border-red-500 focus:ring-red-500 focus:border-red-500" : ""}
               ${disabled ? "opacity-60 cursor-not-allowed" : ""}
               ${className}
             `}
             {...props}
           />
 
-          {/* Password Eye Toggle */}
+          {/* RIGHT ICON (Password / Custom) */}
           {isPassword ? (
             <button
               type="button"
@@ -78,14 +77,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                   handleTogglePassword(e);
                 }
               }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors z-10 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-lg p-1"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 hover:text-gray-700 transition-colors z-10 flex items-center justify-center focus:outline-none rounded-lg cursor-pointer"
               aria-label={showPassword ? "Hide password" : "Show password"}
             >
-              {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+              {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
             </button>
           ) : (
             rightIcon && (
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 z-10 flex items-center justify-center">
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 z-10 flex items-center justify-center cursor-pointer">
                 {rightIcon}
               </div>
             )
