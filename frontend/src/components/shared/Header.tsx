@@ -68,7 +68,7 @@ export default function Header() {
         <div className="container header-container">
           {/* Brand Logo */}
           <Link href="/customer" className="logo-link" aria-label="MakeEasyTrip Home">
-            <svg width="220" height="50" viewBox="0 0 350 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <svg className="block" width="220" height="50" viewBox="0 0 350 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <g transform="translate(10, 5)">
                 <clipPath id="header-suitcase-clip">
                   <rect x="10" y="18" width="40" height="42" rx="8" />

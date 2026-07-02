@@ -4,6 +4,8 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useData } from "@/context/DataContext";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { Input } from "@/components/ui/Input";
+import { User, Mail, Phone, Lock } from "lucide-react";
 
 function TravelerAuthContent() {
   const router = useRouter();
@@ -15,11 +17,9 @@ function TravelerAuthContent() {
   const [activePanel, setActivePanel] = useState<"login" | "signup" | "forgot" | "otp" | "reset">("login");
   const [alertText, setAlertText] = useState("");
   const [alertType, setAlertType] = useState<"info" | "error" | "success">("info");
-
   // Form Fields
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const [showLoginPassword, setShowLoginPassword] = useState(false);
 
   const [signupName, setSignupName] = useState("");
   const [signupEmail, setSignupEmail] = useState("");
@@ -27,8 +27,6 @@ function TravelerAuthContent() {
   const [signupPassword, setSignupPassword] = useState("");
   const [signupConfirmPassword, setSignupConfirmPassword] = useState("");
   const [signupTerms, setSignupTerms] = useState(false);
-  const [showSignupPassword, setShowSignupPassword] = useState(false);
-  const [showSignupConfirmPassword, setShowSignupConfirmPassword] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState("None");
   const [passwordStrengthFill, setPasswordStrengthFill] = useState("0%");
 
@@ -38,8 +36,6 @@ function TravelerAuthContent() {
 
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
-  const [showNewPassword, setShowNewPassword] = useState(false);
-  const [showConfirmNewPassword, setShowConfirmNewPassword] = useState(false);
 
   useEffect(() => {
     if (activeUser) {
@@ -232,46 +228,27 @@ function TravelerAuthContent() {
                 </p>
               </div>
               <form onSubmit={handleLoginSubmit} className="flex flex-col gap-4">
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">
-                    Email / Mobile Number
-                  </label>
-                  <div className="relative">
-                    <i className="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type="text"
-                      required
-                      value={loginEmail}
-                      onChange={(e) => setLoginEmail(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="siddharth.patil@gmail.com"
-                    />
-                  </div>
-                </div>
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">Password</label>
-                  <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type={showLoginPassword ? "text" : "password"}
-                      required
-                      value={loginPassword}
-                      onChange={(e) => setLoginPassword(e.target.value)}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="Enter password"
-                    />
-                    <button
-                      type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
-                      onClick={() => setShowLoginPassword(!showLoginPassword)}
-                    >
-                      <i className={`fa-solid ${showLoginPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
-                    </button>
-                  </div>
-                </div>
+                <Input
+                  label="Email / Mobile Number"
+                  type="text"
+                  required
+                  value={loginEmail}
+                  onChange={(e) => setLoginEmail(e.target.value)}
+                  placeholder="siddharth.patil@gmail.com"
+                  leftIcon={<Mail size={16} />}
+                />
+                <Input
+                  label="Password"
+                  type="password"
+                  required
+                  value={loginPassword}
+                  onChange={(e) => setLoginPassword(e.target.value)}
+                  placeholder="Enter password"
+                  leftIcon={<Lock size={16} />}
+                />
                 <div className="form-checkbox-row flex justify-between items-center text-[10px] text-text-main">
-                  <label className="flex items-center gap-1.5 cursor-pointer">
-                    <input type="checkbox" id="login-remember" /> Remember Me
+                  <label className="flex items-center gap-1.5 cursor-pointer select-none">
+                    <input type="checkbox" id="login-remember" className="accent-orange-500 h-3.5 w-3.5 cursor-pointer" /> Remember Me
                   </label>
                   <button
                     type="button"
@@ -281,8 +258,8 @@ function TravelerAuthContent() {
                     Forgot Password?
                   </button>
                 </div>
-                <button type="submit" className="btn-primary w-full justify-center py-2.5 text-xs">
-                  <i className="fa-solid fa-right-to-bracket mr-1.5"></i> Login Securely
+                <button type="submit" className="btn-primary w-full justify-center py-2.5 text-xs flex items-center gap-1.5">
+                  <i className="fa-solid fa-right-to-bracket"></i> Login Securely
                 </button>
               </form>
               <p className="auth-toggle-tip text-center text-xs mt-6">
@@ -307,76 +284,47 @@ function TravelerAuthContent() {
                 </p>
               </div>
               <form onSubmit={handleSignupSubmit} className="flex flex-col gap-4">
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">Full Name</label>
-                  <div className="relative">
-                    <i className="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type="text"
-                      required
-                      value={signupName}
-                      onChange={(e) => setSignupName(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="Siddharth Patil"
-                    />
-                  </div>
-                </div>
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">
-                    Email Address
-                  </label>
-                  <div className="relative">
-                    <i className="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type="email"
-                      required
-                      value={signupEmail}
-                      onChange={(e) => setSignupEmail(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="siddharth.patil@gmail.com"
-                    />
-                  </div>
-                </div>
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">
-                    Mobile Number
-                  </label>
-                  <div className="relative">
-                    <i className="fa-solid fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type="tel"
-                      required
-                      value={signupPhone}
-                      onChange={(e) => setSignupPhone(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
-                </div>
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">Password</label>
-                  <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type={showSignupPassword ? "text" : "password"}
-                      required
-                      value={signupPassword}
-                      onChange={(e) => {
-                        setSignupPassword(e.target.value);
-                        checkStrength(e.target.value);
-                      }}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="Enter password"
-                    />
-                    <button
-                      type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
-                      onClick={() => setShowSignupPassword(!showSignupPassword)}
-                    >
-                      <i className={`fa-solid ${showSignupPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
-                    </button>
-                  </div>
-                  <div className="strength-indicator-box mt-1.5">
+                <Input
+                  label="Full Name"
+                  type="text"
+                  required
+                  value={signupName}
+                  onChange={(e) => setSignupName(e.target.value)}
+                  placeholder="Siddharth Patil"
+                  leftIcon={<User size={16} />}
+                />
+                <Input
+                  label="Email Address"
+                  type="email"
+                  required
+                  value={signupEmail}
+                  onChange={(e) => setSignupEmail(e.target.value)}
+                  placeholder="siddharth.patil@gmail.com"
+                  leftIcon={<Mail size={16} />}
+                />
+                <Input
+                  label="Mobile Number"
+                  type="tel"
+                  required
+                  value={signupPhone}
+                  onChange={(e) => setSignupPhone(e.target.value)}
+                  placeholder="+91 98765 43210"
+                  leftIcon={<Phone size={16} />}
+                />
+                <div className="flex flex-col gap-1.5 w-full">
+                  <Input
+                    label="Password"
+                    type="password"
+                    required
+                    value={signupPassword}
+                    onChange={(e) => {
+                      setSignupPassword(e.target.value);
+                      checkStrength(e.target.value);
+                    }}
+                    placeholder="Enter password"
+                    leftIcon={<Lock size={16} />}
+                  />
+                  <div className="strength-indicator-box mt-1">
                     <div className="strength-bar bg-slate-100 h-1.5 rounded overflow-hidden">
                       <div
                         className="strength-fill bg-secondary h-full transition-all duration-300"
@@ -388,39 +336,25 @@ function TravelerAuthContent() {
                     </span>
                   </div>
                 </div>
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">
-                    Confirm Password
-                  </label>
-                  <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type={showSignupConfirmPassword ? "text" : "password"}
-                      required
-                      value={signupConfirmPassword}
-                      onChange={(e) => setSignupConfirmPassword(e.target.value)}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="Re-enter password"
-                    />
-                    <button
-                      type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
-                      onClick={() => setShowSignupConfirmPassword(!showSignupConfirmPassword)}
-                    >
-                      <i className={`fa-solid ${showSignupConfirmPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
-                    </button>
-                  </div>
-                </div>
+                <Input
+                  label="Confirm Password"
+                  type="password"
+                  required
+                  value={signupConfirmPassword}
+                  onChange={(e) => setSignupConfirmPassword(e.target.value)}
+                  placeholder="Re-enter password"
+                  leftIcon={<Lock size={16} />}
+                />
                 <div className="form-checkbox-row text-[10px] text-text-main mt-1">
-                  <label className="flex items-start gap-1.5 cursor-pointer">
+                  <label className="flex items-start gap-2 cursor-pointer select-none">
                     <input
                       type="checkbox"
                       required
                       checked={signupTerms}
                       onChange={(e) => setSignupTerms(e.target.checked)}
-                      className="mt-0.5"
+                      className="accent-orange-500 h-3.5 w-3.5 mt-0.5 cursor-pointer"
                     />
-                    <span>
+                    <span className="leading-tight">
                       I agree to the{" "}
                       <Link href="#" className="text-secondary font-bold hover:underline">
                         Terms of Services
@@ -432,8 +366,8 @@ function TravelerAuthContent() {
                     </span>
                   </label>
                 </div>
-                <button type="submit" className="btn-primary w-full justify-center py-2.5 text-xs">
-                  <i className="fa-solid fa-user-plus mr-1.5"></i> Register Account
+                <button type="submit" className="btn-primary w-full justify-center py-2.5 text-xs flex items-center gap-1.5">
+                  <i className="fa-solid fa-user-plus"></i> Register Account
                 </button>
               </form>
               <p className="auth-toggle-tip text-center text-xs mt-6">
@@ -458,22 +392,15 @@ function TravelerAuthContent() {
                 </p>
               </div>
               <form onSubmit={handleForgotSubmit} className="flex flex-col gap-4">
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">
-                    Email or Mobile Number
-                  </label>
-                  <div className="relative">
-                    <i className="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type="text"
-                      required
-                      value={forgotEmail}
-                      onChange={(e) => setForgotEmail(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="Enter email or mobile"
-                    />
-                  </div>
-                </div>
+                <Input
+                  label="Email or Mobile Number"
+                  type="text"
+                  required
+                  value={forgotEmail}
+                  onChange={(e) => setForgotEmail(e.target.value)}
+                  placeholder="Enter email or mobile"
+                  leftIcon={<Mail size={16} />}
+                />
                 <button type="submit" className="btn-primary w-full justify-center py-2.5 text-xs">
                   <i className="fa-solid fa-paper-plane mr-1.5"></i> Send Verification OTP
                 </button>
@@ -561,54 +488,26 @@ function TravelerAuthContent() {
                 </p>
               </div>
               <form onSubmit={handleResetSubmit} className="flex flex-col gap-4">
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">
-                    New Password
-                  </label>
-                  <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type={showNewPassword ? "text" : "password"}
-                      required
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="Enter new password"
-                    />
-                    <button
-                      type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
-                      onClick={() => setShowNewPassword(!showNewPassword)}
-                    >
-                      <i className={`fa-solid ${showNewPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
-                    </button>
-                  </div>
-                </div>
-                <div className="form-group flex flex-col gap-1.5 mb-4">
-                  <label className="text-[10px] text-text-muted font-bold uppercase">
-                    Confirm Password
-                  </label>
-                  <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
-                    <input
-                      type={showConfirmNewPassword ? "text" : "password"}
-                      required
-                      value={confirmNewPassword}
-                      onChange={(e) => setConfirmNewPassword(e.target.value)}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
-                      placeholder="Confirm new password"
-                    />
-                    <button
-                      type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
-                      onClick={() => setShowConfirmNewPassword(!showConfirmNewPassword)}
-                    >
-                      <i className={`fa-solid ${showConfirmNewPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
-                    </button>
-                  </div>
-                </div>
-                <button type="submit" className="btn-primary w-full justify-center py-2.5 text-xs">
-                  <i className="fa-solid fa-key mr-1.5"></i> Reset Password
+                <Input
+                  label="New Password"
+                  type="password"
+                  required
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  placeholder="Enter new password"
+                  leftIcon={<Lock size={16} />}
+                />
+                <Input
+                  label="Confirm Password"
+                  type="password"
+                  required
+                  value={confirmNewPassword}
+                  onChange={(e) => setConfirmNewPassword(e.target.value)}
+                  placeholder="Confirm new password"
+                  leftIcon={<Lock size={16} />}
+                />
+                <button type="submit" className="btn-primary w-full justify-center py-2.5 text-xs flex items-center gap-1.5">
+                  <i className="fa-solid fa-key"></i> Reset Password
                 </button>
               </form>
             </div>
