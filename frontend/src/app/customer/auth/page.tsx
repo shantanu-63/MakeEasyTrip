@@ -4,6 +4,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useData } from "@/context/DataContext";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { User, Mail, Phone, Lock, Eye, EyeOff } from "lucide-react";
 
 function TravelerAuthContent() {
   const router = useRouter();
@@ -237,13 +238,13 @@ function TravelerAuthContent() {
                     Email / Mobile Number
                   </label>
                   <div className="relative">
-                    <i className="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type="text"
                       required
                       value={loginEmail}
                       onChange={(e) => setLoginEmail(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="siddharth.patil@gmail.com"
                     />
                   </div>
@@ -251,21 +252,21 @@ function TravelerAuthContent() {
                 <div className="form-group flex flex-col gap-1.5 mb-4">
                   <label className="text-[10px] text-text-muted font-bold uppercase">Password</label>
                   <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type={showLoginPassword ? "text" : "password"}
                       required
                       value={loginPassword}
                       onChange={(e) => setLoginPassword(e.target.value)}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-11 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="Enter password"
                     />
                     <button
                       type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
                       onClick={() => setShowLoginPassword(!showLoginPassword)}
                     >
-                      <i className={`fa-regular ${showLoginPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
+                      {showLoginPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
                   </div>
                 </div>
@@ -310,13 +311,13 @@ function TravelerAuthContent() {
                 <div className="form-group flex flex-col gap-1.5 mb-4">
                   <label className="text-[10px] text-text-muted font-bold uppercase">Full Name</label>
                   <div className="relative">
-                    <i className="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type="text"
                       required
                       value={signupName}
                       onChange={(e) => setSignupName(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="Siddharth Patil"
                     />
                   </div>
@@ -326,13 +327,13 @@ function TravelerAuthContent() {
                     Email Address
                   </label>
                   <div className="relative">
-                    <i className="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type="email"
                       required
                       value={signupEmail}
                       onChange={(e) => setSignupEmail(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="siddharth.patil@gmail.com"
                     />
                   </div>
@@ -342,13 +343,13 @@ function TravelerAuthContent() {
                     Mobile Number
                   </label>
                   <div className="relative">
-                    <i className="fa-solid fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type="tel"
                       required
                       value={signupPhone}
                       onChange={(e) => setSignupPhone(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -356,7 +357,7 @@ function TravelerAuthContent() {
                 <div className="form-group flex flex-col gap-1.5 mb-4">
                   <label className="text-[10px] text-text-muted font-bold uppercase">Password</label>
                   <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type={showSignupPassword ? "text" : "password"}
                       required
@@ -365,15 +366,15 @@ function TravelerAuthContent() {
                         setSignupPassword(e.target.value);
                         checkStrength(e.target.value);
                       }}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-11 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="Enter password"
                     />
                     <button
                       type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
                       onClick={() => setShowSignupPassword(!showSignupPassword)}
                     >
-                      <i className={`fa-regular ${showSignupPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
+                      {showSignupPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
                   </div>
                   <div className="strength-indicator-box mt-1.5">
@@ -393,21 +394,21 @@ function TravelerAuthContent() {
                     Confirm Password
                   </label>
                   <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type={showSignupConfirmPassword ? "text" : "password"}
                       required
                       value={signupConfirmPassword}
                       onChange={(e) => setSignupConfirmPassword(e.target.value)}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-11 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="Re-enter password"
                     />
                     <button
                       type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
                       onClick={() => setShowSignupConfirmPassword(!showSignupConfirmPassword)}
                     >
-                      <i className={`fa-regular ${showSignupConfirmPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
+                      {showSignupConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
                   </div>
                 </div>
@@ -463,13 +464,13 @@ function TravelerAuthContent() {
                     Email or Mobile Number
                   </label>
                   <div className="relative">
-                    <i className="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type="text"
                       required
                       value={forgotEmail}
                       onChange={(e) => setForgotEmail(e.target.value)}
-                      className="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="Enter email or mobile"
                     />
                   </div>
@@ -566,21 +567,21 @@ function TravelerAuthContent() {
                     New Password
                   </label>
                   <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type={showNewPassword ? "text" : "password"}
                       required
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-11 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="Enter new password"
                     />
                     <button
                       type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
                       onClick={() => setShowNewPassword(!showNewPassword)}
                     >
-                      <i className={`fa-regular ${showNewPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
+                      {showNewPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
                   </div>
                 </div>
@@ -589,21 +590,21 @@ function TravelerAuthContent() {
                     Confirm Password
                   </label>
                   <div className="relative">
-                    <i className="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm pointer-events-none z-10"></i>
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
                     <input
                       type={showConfirmNewPassword ? "text" : "password"}
                       required
                       value={confirmNewPassword}
                       onChange={(e) => setConfirmNewPassword(e.target.value)}
-                      className="w-full h-14 pl-12 pr-12 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
+                      className="w-full h-14 pl-11 pr-11 rounded-xl border border-slate-200 bg-slate-50 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF5E14] focus:border-transparent transition-all"
                       placeholder="Confirm new password"
                     />
                     <button
                       type="button"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary transition-colors z-10 flex items-center justify-center"
                       onClick={() => setShowConfirmNewPassword(!showConfirmNewPassword)}
                     >
-                      <i className={`fa-regular ${showConfirmNewPassword ? "fa-eye-slash" : "fa-eye"} text-sm`}></i>
+                      {showConfirmNewPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
                   </div>
                 </div>
