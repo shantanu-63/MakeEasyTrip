@@ -224,6 +224,8 @@ model Property {
   bookings      Booking[]
   reviews       Review[]
   wishlistItems WishlistItem[]
+  propertyImages PropertyImage[]
+  adminActions  AdminAction[]
 
   @@index([city])
   @@index([type])
@@ -251,6 +253,8 @@ model Room {
   updatedAt     DateTime  @updatedAt
 
   bookings      Booking[]
+  roomImages    RoomImage[]
+  inventories   Inventory[]
 
   @@index([propertyId])
   @@index([isAvailable])
@@ -283,6 +287,7 @@ model Booking {
   updatedAt       DateTime      @updatedAt
 
   payments        Payment[]
+  guestsList      BookingGuest[]
 
   @@index([userId])
   @@index([propertyId])
@@ -468,4 +473,75 @@ model RefreshToken {
 
   @@index([token])
   @@index([userId])
+}
+
+model PartnerVerificationOTP {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  fullName     String
+  passwordHash String
+  otpCode      String
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+}
+
+model PartnerSession {
+  id        String   @id @default(uuid())
+  partnerId String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model PropertyImage {
+  id         String   @id @default(uuid())
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  url        String
+  isMain     Boolean  @default(false)
+  displayOrder Int     @default(0)
+  createdAt  DateTime @default(now())
+}
+
+model RoomImage {
+  id        String   @id @default(uuid())
+  roomId    String
+  room      Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  url       String
+  createdAt DateTime @default(now())
+}
+
+model Inventory {
+  id             String   @id @default(uuid())
+  roomId         String
+  room           Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  date           DateTime
+  availableRooms Int
+  bookedRooms    Int      @default(0)
+  blockedRooms   Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@unique([roomId, date])
+  @@index([roomId])
+}
+
+model BookingGuest {
+  id        String   @id @default(uuid())
+  bookingId String
+  booking   Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  fullName  String
+  age       Int?
+  gender    String?
+  createdAt DateTime @default(now())
+}
+
+model AdminAction {
+  id          String   @id @default(uuid())
+  propertyId  String
+  property    Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  actionType  String
+  reason      String?  @db.Text
+  adminEmail  String
+  createdAt   DateTime @default(now())
 }

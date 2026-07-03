@@ -29,13 +29,16 @@ export const getPendingApprovals = asyncHandler(async (req: Request, res: Respon
   return sendSuccess(res, result);
 });
 
-export const approveProperty = asyncHandler(async (req: Request, res: Response) => {
-  const result = await AdminService.approveProperty(req.params.id);
+export const approveProperty = asyncHandler(async (req: any, res: Response) => {
+  const adminEmail = req.user?.email || "admin@makeeasytrip.com";
+  const result = await AdminService.approveProperty(req.params.id, adminEmail);
   return sendSuccess(res, result, "Property approved");
 });
 
-export const rejectProperty = asyncHandler(async (req: Request, res: Response) => {
-  const result = await AdminService.rejectProperty(req.params.id);
+export const rejectProperty = asyncHandler(async (req: any, res: Response) => {
+  const adminEmail = req.user?.email || "admin@makeeasytrip.com";
+  const reason = req.body?.reason || "Rejected by administrator";
+  const result = await AdminService.rejectProperty(req.params.id, reason, adminEmail);
   return sendSuccess(res, result, "Property rejected");
 });
 

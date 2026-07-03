@@ -30,6 +30,7 @@ export default function PartnerPropertiesPage() {
   const [newDesc, setNewDesc] = useState("");
   const [newAmenities, setNewAmenities] = useState<string[]>([]);
   const [newCoverImage, setNewCoverImage] = useState("");
+  const [uploadedImages, setUploadedImages] = useState<any[]>([]);
   
   // Policies
   const [checkInTime, setCheckInTime] = useState("14:00");
@@ -56,6 +57,15 @@ export default function PartnerPropertiesPage() {
     e.preventDefault();
     if (!newTitle.trim() || !newPrice.trim()) return;
 
+    if (uploadedImages.length < 3) {
+      alert("Please upload at least 3 images to register the property.");
+      return;
+    }
+    if (uploadedImages.length > 8) {
+      alert("You can upload a maximum of 8 images.");
+      return;
+    }
+
     const rate = parseFloat(newPrice);
 
     // Preset list of nice travel images depending on city/type
@@ -74,10 +84,7 @@ export default function PartnerPropertiesPage() {
       location: newLocation,
       price: rate,
       image: newCoverImage || defaultImages[newType],
-      gallery: [
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80",
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=400&q=80",
-      ],
+      gallery: uploadedImages.map((img) => img.url),
       rating: 5.0,
       ratingCount: 1,
       amenities: newAmenities.length > 0 ? newAmenities : ["Free WiFi", "Swimming Pool"],
@@ -103,6 +110,7 @@ export default function PartnerPropertiesPage() {
     setNewDesc("");
     setNewAmenities([]);
     setNewCoverImage("");
+    setUploadedImages([]);
     setWizardStep(1);
     setShowWizard(false);
   };
@@ -359,18 +367,14 @@ export default function PartnerPropertiesPage() {
                       onChange={(e) => setNewCoverImage(e.target.value)}
                     />
                   </div>
-                  <div className="form-group">
-                    <label className="text-[10px] text-text-muted font-bold uppercase block mb-1">
-                      Or upload files via dropzone
-                    </label>
                     <ImageDropzone
+                      initialImages={uploadedImages}
                       onChange={(images) => {
-                        if (images.length > 0) {
-                          setNewCoverImage(images[0].url);
-                        }
+                        setUploadedImages(images);
+                        const cover = images.find((img) => img.isCover)?.url || (images.length > 0 ? images[0].url : "");
+                        setNewCoverImage(cover);
                       }}
                     />
-                  </div>
                   <div className="form-group flex flex-col gap-1">
                     <label className="text-[10px] text-text-muted font-bold uppercase">Cancellation Policy</label>
                     <input

@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import compression from "compression";
 import morgan from "morgan";
+import cookieParser from "cookie-parser";
 import swaggerUi from "swagger-ui-express";
 import { globalLimiter } from "./middleware/rateLimiter";
 import { requestLogger } from "./middleware/requestLogger";
@@ -17,9 +18,10 @@ app.use(cors({
   origin: process.env.CORS_ORIGINS?.split(",") || ["http://localhost:3000", "http://localhost:3001"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
 }));
 
+app.use(cookieParser());
 app.use(compression() as any);
 app.use(globalLimiter);
 app.use(express.json({ limit: "10mb" }));

@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { verifyToken, checkRole, optionalToken } from "../middleware/auth";
+import { verifyPartnerSession } from "../middleware/partnerAuth";
 import { authLimiter } from "../middleware/rateLimiter";
 
 import * as auth from "../controllers/authController";
@@ -8,11 +9,19 @@ import * as prop from "../controllers/propertyController";
 import * as booking from "../controllers/bookingController";
 import * as review from "../controllers/reviewController";
 import * as partner from "../controllers/partnerController";
+import * as partnerAuth from "../controllers/partnerAuthController";
 import * as admin from "../controllers/adminController";
 import * as notif from "../controllers/notificationController";
 import * as support from "../controllers/supportController";
 
 const router = Router();
+
+// Partner Auth routes
+router.post("/partner/auth/register", authLimiter, partnerAuth.register);
+router.post("/partner/auth/verify-otp", authLimiter, partnerAuth.verifyOtp);
+router.post("/partner/auth/login", authLimiter, partnerAuth.login);
+router.post("/partner/auth/logout", partnerAuth.logout);
+router.get("/partner/auth/me", verifyPartnerSession, partnerAuth.getProfile);
 
 router.post("/auth/register", authLimiter, auth.register);
 router.post("/auth/login", authLimiter, auth.login);

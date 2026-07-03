@@ -82,12 +82,34 @@ export class AdminService {
     return { properties, partners };
   }
 
-  static async approveProperty(id: string) {
-    return prisma.property.update({ where: { id }, data: { status: "APPROVED" } });
+  static async approveProperty(id: string, adminEmail: string = "admin@makeeasytrip.com") {
+    return prisma.$transaction(async (tx) => {
+      const updated = await tx.property.update({ where: { id }, data: { status: "APPROVED" } });
+      await tx.adminAction.create({
+        data: {
+          propertyId: id,
+          actionType: "APPROVE",
+          reason: "Approved by system administrator",
+          adminEmail,
+        },
+      });
+      return updated;
+    });
   }
 
-  static async rejectProperty(id: string) {
-    return prisma.property.update({ where: { id }, data: { status: "REJECTED" } });
+  static async rejectProperty(id: string, reason: string = "Rejected by system administrator", adminEmail: string = "admin@makeeasytrip.com") {
+    return prisma.$transaction(async (tx) => {
+      const updated = await tx.property.update({ where: { id }, data: { status: "REJECTED" } });
+      await tx.adminAction.create({
+        data: {
+          propertyId: id,
+          actionType: "REJECT",
+          reason,
+          adminEmail,
+        },
+      });
+      return updated;
+    });
   }
 
   static async getBanners() {
