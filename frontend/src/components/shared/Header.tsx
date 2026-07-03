@@ -71,7 +71,7 @@ export default function Header() {
             <img
               src="/logo/logo.png"
               alt="MakeEasyTrip Logo"
-              className="w-[130px] sm:w-[160px] md:w-[170px] lg:w-[200px] h-auto object-contain block"
+              className="w-[130px] sm:w-[155px] md:w-[160px] lg:w-[190px] h-auto object-contain block"
             />
           </Link>
 

@@ -18,13 +18,11 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Branding column */}
           <div className="footer-logo-box">
-            <div className="bg-white/95 px-3 py-1.5 rounded-xl inline-block">
-              <img
-                src="/logo/logo.png"
-                alt="MakeEasyTrip Logo"
-                className="w-[130px] sm:w-[155px] md:w-[170px] lg:w-[190px] h-auto object-contain block"
-              />
-            </div>
+            <img
+              src="/logo/logo.png"
+              alt="MakeEasyTrip Logo"
+              className="w-[130px] sm:w-[155px] md:w-[160px] lg:w-[185px] h-auto object-contain block"
+            />
             <p className="mt-[10px] text-sm text-slate-300">
               MakeEasyTrip Travel Tech Pvt Ltd is an emerging travel technology company dedicated to transforming the travel and hospitality industry through innovation, digital solutions, and customer-centric services.
             </p>
