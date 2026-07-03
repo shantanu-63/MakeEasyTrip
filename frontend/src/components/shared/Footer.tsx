@@ -33,17 +33,23 @@ export default function Footer() {
                 <rect x="38" y="59" width="6" height="4" rx="2" fill="#FFFFFF" />
                 <g clipPath="url(#footer-suitcase-clip)">
                   <rect x="10" y="18" width="40" height="42" fill="#FF5E14" />
-                  <polygon points="10,60 50,18 50,60" fill="#FFFFFF" />
+                  <polygon points="10,52 18,60 26,26 34,40 42,28 50,18 50,60 10,60" fill="#FFFFFF" />
                 </g>
                 <path
                   d="M 40,0 L 25,3 L 15,3 L -10,30 L -18,30 L -12,3 L -28,3 L -33,10 L -37,10 L -34,0 L -37,-10 L -33,-10 L -28,-3 L -12,-3 L -18,-30 L -10,-30 L 15,-3 L 25,-3 Z"
                   fill="#0A225C"
-                  transform="translate(26, 42) rotate(-45) scale(0.32)"
+                  transform="translate(23, 44) rotate(-45) scale(0.32)"
                 />
               </g>
               <g transform="translate(70, 45)">
                 <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#FFFFFF">
-                  make<tspan fill="#FF5E14">easy</tspan>trip
+                  make
+                </text>
+                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#FF5E14" x="84">
+                  easy
+                </text>
+                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#FFFFFF" x="156">
+                  trip
                 </text>
                 <text fontFamily="Inter" fontSize="11" fontWeight="700" letterSpacing="4.5" fill="#E2E8F0" x="3" y="18">
                   TRAVEL MADE EASY

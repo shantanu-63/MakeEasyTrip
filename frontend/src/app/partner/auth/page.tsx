@@ -133,18 +133,13 @@ function PartnerAuthForm() {
                 <rect x="38" y="59" width="6" height="4" rx="2" fill="#0A225C" />
                 <g clipPath="url(#auth-logo-clip)">
                   <rect x="10" y="18" width="40" height="42" fill="#FF5E14" />
-                  <polygon points="10,60 50,18 50,60" fill="#0A225C" />
+                  <polygon points="10,52 18,60 26,26 34,40 42,28 50,18 50,60 10,60" fill="#0A225C" />
                 </g>
-                <path
-                  d="M 40,0 L 25,3 L 15,3 L -10,30 L -18,30 L -12,3 L -28,3 L -33,10 L -37,10 L -34,0 L -37,-10 L -33,-10 L -28,-3 L -12,-3 L -18,-30 L -10,-30 L 15,-3 L 25,-3 Z"
-                  fill="#FFFFFF"
-                  transform="translate(26, 42) rotate(-45) scale(0.32)"
-                />
               </g>
               <g transform="translate(70, 45)">
-                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#0A225C">
-                  make<tspan fill="#FF5E14">easy</tspan>trip
-                </text>
+                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#0A225C">make</text>
+                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#FF5E14" x="84">easy</text>
+                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#0A225C" x="156">trip</text>
               </g>
             </svg>
           </Link>
