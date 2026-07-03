@@ -18,11 +18,38 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Branding column */}
           <div className="footer-logo-box">
-            <img
-              src="/logo/logo.png"
-              alt="MakeEasyTrip Logo"
-              className="w-[130px] sm:w-[155px] md:w-[160px] lg:w-[185px] h-auto object-contain block"
-            />
+            <svg width="240" height="50" viewBox="0 0 350 80" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(10, 5)">
+                <clipPath id="footer-suitcase-clip">
+                  <rect x="10" y="18" width="40" height="42" rx="8" />
+                </clipPath>
+                <rect x="20" y="15" width="4" height="3" rx="1" fill="#FFFFFF" />
+                <rect x="36" y="15" width="4" height="3" rx="1" fill="#FFFFFF" />
+                <path
+                  d="M 20,13 L 20,7 C 20,4 23,2 26,2 L 34,2 C 37,2 40,4 40,7 L 40,13 L 36,13 L 36,8 C 36,6 34,5 33,5 L 27,5 C 26,5 24,6 24,8 L 24,13 Z"
+                  fill="#FFFFFF"
+                />
+                <rect x="16" y="59" width="6" height="4" rx="2" fill="#FFFFFF" />
+                <rect x="38" y="59" width="6" height="4" rx="2" fill="#FFFFFF" />
+                <g clipPath="url(#footer-suitcase-clip)">
+                  <rect x="10" y="18" width="40" height="42" fill="#FF5E14" />
+                  <polygon points="10,60 50,18 50,60" fill="#FFFFFF" />
+                </g>
+                <path
+                  d="M 40,0 L 25,3 L 15,3 L -10,30 L -18,30 L -12,3 L -28,3 L -33,10 L -37,10 L -34,0 L -37,-10 L -33,-10 L -28,-3 L -12,-3 L -18,-30 L -10,-30 L 15,-3 L 25,-3 Z"
+                  fill="#0A225C"
+                  transform="translate(26, 42) rotate(-45) scale(0.32)"
+                />
+              </g>
+              <g transform="translate(70, 45)">
+                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#FFFFFF">
+                  make<tspan fill="#FF5E14">easy</tspan>trip
+                </text>
+                <text fontFamily="Inter" fontSize="11" fontWeight="700" letterSpacing="4.5" fill="#E2E8F0" x="3" y="18">
+                  TRAVEL MADE EASY
+                </text>
+              </g>
+            </svg>
             <p className="mt-[10px] text-sm text-slate-300">
               MakeEasyTrip Travel Tech Pvt Ltd is an emerging travel technology company dedicated to transforming the travel and hospitality industry through innovation, digital solutions, and customer-centric services.
             </p>
