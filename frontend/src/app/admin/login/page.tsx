@@ -70,27 +70,11 @@ function AdminLoginForm() {
         {/* Brand Header */}
         <div className="text-center mb-8">
           <Link href="/customer" className="inline-block mb-3">
-            <svg width="220" height="50" viewBox="0 0 350 80" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(10, 5)">
-                <clipPath id="admin-logo-clip">
-                  <rect x="10" y="18" width="40" height="42" rx="8" />
-                </clipPath>
-                <rect x="20" y="15" width="4" height="3" rx="1" fill="#0A225C" />
-                <rect x="36" y="15" width="4" height="3" rx="1" fill="#0A225C" />
-                <path d="M 20,13 L 20,7 C 20,4 23,2 26,2 L 34,2 C 37,2 40,4 40,7 L 40,13 L 36,13 L 36,8 C 36,6 34,5 33,5 L 27,5 C 26,5 24,6 24,8 L 24,13 Z" fill="#0A225C" />
-                <rect x="16" y="59" width="6" height="4" rx="2" fill="#0A225C" />
-                <rect x="38" y="59" width="6" height="4" rx="2" fill="#0A225C" />
-                <g clipPath="url(#admin-logo-clip)">
-                  <rect x="10" y="18" width="40" height="42" fill="#FF5E14" />
-                  <polygon points="10,52 18,60 26,26 34,40 42,28 50,18 50,60 10,60" fill="#0A225C" />
-                </g>
-              </g>
-              <g transform="translate(70, 45)">
-                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#0A225C">make</text>
-                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#FF5E14" x="84">easy</text>
-                <text fontFamily="Outfit" fontSize="34" fontWeight="800" fill="#0A225C" x="156">trip</text>
-              </g>
-            </svg>
+            <img
+              src="/logo/logo.png"
+              alt="MakeEasyTrip Logo"
+              className="w-[200px] h-auto object-contain mx-auto block"
+            />
           </Link>
           <h2 className="text-lg font-extrabold text-primary flex items-center justify-center gap-1.5 mt-2">
             <i className="fa-solid fa-user-shield text-secondary"></i> Super Admin Control Panel
